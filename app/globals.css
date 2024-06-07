@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --Blue600 : #2563eb;
+  --Blue300 : #93c5fd;
+  --Blue100 : #dbeafe;
+  --Blue50 : #F5F9FF;
+  --DarkBlue : #090F21;
+  --lightGrey : #1F2937;
+  --white : #ffffff;
+  --lightRed : #FEF2F2;
+  --Red :#991B1B;
+}
+
+/* .bg-Blue600{
+  background-color: var(--Blue600);
+}
+.bg-Blue300{
+  background-color: var(--Blue300);
+}
+.bg-Blue100{
+  background-color: var(--Blue100);
+}
+.bg-Blue50{
+  background-color: var(--Blue50);
+}
+.bg-DarkBlue{
+  background-color: var(--DarkBlue);
+}
+.bg-lightGrey{
+  background-color: var(--lightGrey);
+}
+.bg-white{
+  background-color: var(--white);
+}
+.bg-lightRed{
+  background-color: var(--lightRed);
+}
+.bg-Red{
+  background-color: var(--Red);
+} */
+
+
+
+body {
+  background-color: var(--Blue50);
+  color: var(--DarkBlue);
+}
