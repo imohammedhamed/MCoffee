@@ -1,10 +1,9 @@
 import prisma from '@/lib/prisma'
 import User from '@/app/components/User'
+
 async function getUsers(){
   //"npx prisma studio" (to insert data using GUI)
-  const Users = await prisma.user.findMany({
-    where:{fullName:{contains:'a'}}
-  })
+  const Users = await prisma.user.findMany()
 
   return Users;
 }
