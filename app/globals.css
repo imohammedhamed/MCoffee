@@ -14,7 +14,9 @@
   --Red :#991B1B;
 }
 
-/* .bg-Blue600{
+/* color utility class */
+
+.bg-Blue600{
   background-color: var(--Blue600);
 }
 .bg-Blue300{
@@ -40,7 +42,36 @@
 }
 .bg-Red{
   background-color: var(--Red);
-} */
+}
+
+
+.text-Blue600{
+  color: var(--Blue600);
+}
+.text-Blue300{
+  color: var(--Blue300);
+}
+.text-Blue100{
+  color: var(--Blue100);
+}
+.text-Blue50{
+  color: var(--Blue50);
+}
+.text-DarkBlue{
+  color: var(--DarkBlue);
+}
+.text-lightGrey{
+  color: var(--lightGrey);
+}
+.text-white{
+  color: var(--white);
+}
+.text-lightRed{
+  color: var(--lightRed);
+}
+.text-Red{
+  color: var(--Red);
+}
 
 
 
