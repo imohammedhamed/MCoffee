@@ -1,9 +1,12 @@
-import Landing from "./pages/home/landing";
-
+import LandingSection from "./components/landing-section";
+import NewsLetterSection from "./components/newsLetter-section";
+import AboutSection from "./components/about-section";
 export default function Home() {
   return (
-    <>
-      <Landing />
-    </>
+    <main>
+    <LandingSection />
+    <NewsLetterSection/>
+    <AboutSection/>
+    </main>
   );
 }

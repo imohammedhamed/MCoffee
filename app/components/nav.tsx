@@ -1,10 +1,11 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
-
+import {NavLinks} from "@/lib/data"
 const Navbar = () => {
   return (
-    <nav className="flex justify-between items-center px-4 py-1 border lg:px-32">
+    <nav className="bg-white px-4 py-1 border lg:px-32">
+      <div className="container mx-auto flex justify-between items-center">
       <div className="flex items-center">
         <span>
           <Link href="/">
@@ -16,12 +17,12 @@ const Navbar = () => {
             />
           </Link>
         </span>
-        <ul className="flex *:px-4 justify-center items-center sm:hidden *:text-tetiary">
-          <Button variant='link'><Link href="/">Home</Link></Button>
-          <Button variant='link'><Link href="">Menu</Link></Button>
-          <Button variant='link'><Link href="">About Us</Link></Button>
-          <Button variant='link'><Link href="">New Stuff</Link></Button>
-          <Button variant='link'><Link href="">Contact</Link></Button>
+        <ul className="flex *:px-2 justify-center items-center sm:hidden *:text-tetiary">
+          {NavLinks.map(link=>{
+            return(
+                <Link key={link.path} href={link.path} className=" text-base text-tetiary font-medium hover:text-primaryLight" >{link.Name}</Link>
+            )
+          })}
         </ul>
       </div>
       <div>
@@ -45,6 +46,7 @@ const Navbar = () => {
             Sign Up
           </Link>
         </Button>
+      </div>
       </div>
     </nav>
   );

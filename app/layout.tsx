@@ -22,9 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${openSans.className}`}>
+      <body className={` bg-secondaryLight ${openSans.className}`}>
         <Navbar />
-        <main>{children}</main>
+        {children}
         <Footer />
       </body>
     </html>

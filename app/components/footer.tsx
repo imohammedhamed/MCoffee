@@ -1,11 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import {NavLinks,SocialLinks} from  "@/lib/data"
 
 const Footer = () => {
   return (
-    <div className="italic text-tetiary font-bold text-xs pt-32 pb-4">
-      <div className="flex justify-between p-4 border-t border-b border-tetiary items-center lg:px-8">
+    <div className=" italic text-tetiary font-bold text-xs pt-32">
+      <div className=" bg-white">
+      <div className=" border-t border-b border-tetiary">
+        <div className=" container mx-auto flex justify-between p-4 items-center lg:px-8">
         <div className="flex items-center">
           <Link href="/">
             <Image
@@ -15,56 +18,52 @@ const Footer = () => {
               alt="Logo"
             />
           </Link>
-          <p>We're Always Here To Help <br />
-          Reach out to us through any of these support channels </p>
+          <p className=" text-primaryDark text-sm lg:text-base">{`We're Always Here To Help`} <br />
+          {`Reach out to us through any of these support channels`} </p>
         </div>
         <div className="flex">
           <Link href="/">
-            <Image src="/info.svg" height={70} width={70} alt="Logo" />
+            <Image src="/info.svg" height={50} width={50} alt="Logo" />
           </Link>
           <Link href="/">
-            <Image src="/mail.svg" height={70} width={70} alt="Logo" />
+            <Image src="/mail.svg" height={50} width={50} alt="Logo" />
           </Link>
         </div>
-      </div>
+        </div>
+        </div>
 
-      <div className="flex justify-between flex-wrap p-4 lg:px-32">
+      <div className="container mx-auto flex justify-between flex-wrap p-4 lg:px-32">
         <div>
           <ul className="flex justify-center items-center *:text-tetiary *:p-1">
-          <Button variant='link'><Link href="/">Home</Link></Button>
-          <Button variant='link'><Link href="">Menu</Link></Button>
-          <Button variant='link'><Link href="">About Us</Link></Button>
-          <Button variant='link'><Link href="">New Stuff</Link></Button>
-          <Button variant='link'><Link href="">Contact</Link></Button>
+            {NavLinks.map(link => {
+              return(
+                <Button key={link.path} variant='link'><Link href={link.path} className="text-base font-bold">{link.Name}</Link></Button>
+              )
+            })}
           </ul>
         </div>
-        <div className="pt-2">
+        <div>
           <ul className="flex items-center *:text-tetiary *:p-1">
-          <Button variant='link'><Link href="">Privacy Policy |</Link></Button>
-          <Button variant='link'><Link href="">Refund Policy |</Link></Button>
-          <Button variant='link'><Link href="">Terms of Use |</Link></Button>
-          <Button variant='link'><Link href="">Disclaimer</Link></Button>
+          <Button variant='link'><Link href="" className="text-base font-bold">Privacy Policy</Link></Button>
+          <Button variant='link'><Link href="" className="text-base font-bold"> Refund Policy</Link></Button>
+          <Button variant='link'><Link href="" className="text-base font-bold">Terms of Use</Link></Button>
           </ul>
         </div>
       </div>
-
-      <div className="w-4/5 m-auto border-tetiary border-t"></div>
-
-      <div className="flex justify-between flex-wrap px-4 pt-4 lg:px-32">
+      <div className="container mx-auto w-3/5 m-auto border-tetiary border-t"></div>
+      <div className="container mx-auto flex justify-between items-center flex-wrap px-4 pt-4 pb-10 lg:px-32">
         <p className="text-primaryDark">Copyright© 2023-2024 @ MCoffee</p>
         <div className="flex">
-          <Link href="">
-            <Image src="/linkedIn.svg" height={30} width={30} alt="Logo" />
-          </Link>
-          <Link href="" className="px-2">
-            <Image src="/insta.svg" height={30} width={30} alt="Logo" />
-          </Link>
-          <Link href="">
-            <Image src="/facebook.svg" height={30} width={30} alt="Logo" />
-          </Link>
+          {SocialLinks.map(link=>{
+            return(
+            <Link key={link.hrefUrl}  href={link.hrefUrl} className=" text-2xl lg:text-3xl pl-1 pr-1 hover:text-primaryDark"> <link.icon/> </Link>
+            )
+          })}
         </div>
+      
       </div>
     </div>
+      </div>
   );
 };
 
