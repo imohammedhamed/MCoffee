@@ -18,10 +18,10 @@ module.exports = {
 
     extend: {
       colors: {
-        tetiary: "#090F21",
-        primaryDark: "#1F2937",
-        primaryLight: "#93C5FD",
-        secondaryLight: "#F5F9FF",
+        darkBlue: "#090F21",
+        darkGrey: "#1F2937",
+        lightBlue: "#93C5FD",
+        lightBlue2: "#F5F9FF",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
