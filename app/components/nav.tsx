@@ -17,10 +17,10 @@ const Navbar = () => {
             />
           </Link>
         </span>
-        <ul className="flex *:px-2 justify-center items-center sm:hidden *:text-tetiary">
+        <ul className="flex *:px-2 justify-center items-center sm:hidden *:text-darkBlue">
           {NavLinks.map(link=>{
             return(
-                <Link key={link.path} href={link.path} className=" text-base text-tetiary font-medium hover:text-primaryLight" >{link.Name}</Link>
+                <Link key={link.path} href={link.path} className=" text-base text-darkBlue font-medium hover:text-lightBlue" >{link.Name}</Link>
             )
           })}
         </ul>

@@ -3,6 +3,7 @@ import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import Footer from "./components/footer";
 import Navbar from "./components/nav";
+import { cn } from "@/lib/utils";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -22,10 +23,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={` bg-secondaryLight ${openSans.className}`}>
-        <Navbar />
-        {children}
-        <Footer />
+      <body
+        className={cn("bg-lightBlue2 h-full font-sans", openSans.className)}
+      >
+        <main className="relative flex flex-col min-h-screen">
+          <Navbar />
+          <div className="flex-grow flex-1">{children}</div>
+
+          <Footer />
+        </main>
       </body>
     </html>
   );

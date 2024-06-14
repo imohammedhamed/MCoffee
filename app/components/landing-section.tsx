@@ -9,8 +9,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 export default function LandingSection() {
     return (
         <>
-        <div className="bg-gradient-to-t from-primaryLight/60 to-white flex justify-center items-center pt-32 pb-44 lg:pt-48 lg:pb-60 ">
-            <div className=" container mx-auto flex flex-wrap justify-center border-b-2 border-tetiary rounded-3xl items-center lg:justify-between lg:flex-row-reverse md:flex-row-reverse lg:gap-16">
+        <div className="bg-gradient-to-t from-lightBlue/60 to-white flex justify-center items-center pt-32 pb-44 lg:pt-48 lg:pb-60 ">
+            <div className=" container mx-auto flex flex-wrap justify-center border-b-2 border-darkBlue rounded-3xl items-center lg:justify-between lg:flex-row-reverse md:flex-row-reverse lg:gap-16">
             <div className="relative">
                 {/* home images */}
                 <div className="absolute -left-5 *:absolute w-72 h-60 lg:w-96 ">
@@ -30,14 +30,14 @@ export default function LandingSection() {
             </div>
             <div className="flex flex-col justify-center items-center text-center pb-8 lg:text-start lg:items-start lg:pb-4">
                 <div>
-                <p className="italic font-bold text-xs text-tetiary lg:text-sm lg:font-normal lg:not-italic">
+                <p className="italic font-bold text-xs text-darkBlue lg:text-sm lg:font-normal lg:not-italic">
                     <span className=' font-bold'>MCoffee: </span>Your Online Destination for Premium Coffee
                 </p>
-                <h1 className="text-2xl font-normal text-tetiary py-2 lg:font-bold lg:text-6xl">
+                <h1 className="text-2xl font-normal text-darkBlue py-2 lg:font-bold lg:text-6xl">
                     Where Every Cup <br />
                     Holds a Moment of Magic
                 </h1>
-                <p className="italic text-xs text-primaryDark lg:not-italic pt-5 lg:font-normal lg:text-lg">
+                <p className="italic text-xs text-darkGrey lg:not-italic pt-5 lg:font-normal lg:text-lg">
                     Find the perfect brew to enhance your workday, and <br />
                     enjoy the finest coffee delivered right to your door.
                 </p>
@@ -58,10 +58,10 @@ export default function LandingSection() {
                     </Avatar>
                 </div>
                 <div>
-                    <p className="text-tetiary italic text-xs font-bold">
+                    <p className="text-darkBlue italic text-xs font-bold">
                     <span className="text-primary">+200 Users </span>join us Now
                     </p>
-                    <p className="italic text-xs  text-primaryDark">
+                    <p className="italic text-xs  text-darkGrey">
                     Membership or SginUp
                     </p>
                 </div>
@@ -76,9 +76,9 @@ export default function LandingSection() {
                 </Button>
                 <Button
                     variant="ghost"
-                    className="border border-tetiary text-sm font-extrabold"
+                    className="border border-darkBlue text-sm font-extrabold"
                     >
-                    <Link href="/login" className="text-tetiary">
+                    <Link href="/login" className="text-darkBlue">
                     Browse Menu
                     </Link>
                 </Button>

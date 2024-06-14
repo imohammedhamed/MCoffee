@@ -5,7 +5,7 @@ export default function AboutSection() {
         <>
             <section>
             <SectionHeading> About Us </SectionHeading>
-            <div className="bg-tetiary w-full p-8 text-center text-secondaryLight relative lg:py-16 lg:px-32">
+            <div className="bg-darkBlue w-full p-8 text-center text-lightBlue2 relative lg:py-16 lg:px-32">
                 <p className=" container mx-auto">
                 {`We've 10 year's experience of crafting the finest quality coffee. From
                 revolutionary methods and commitment to quality to unforgettable
