@@ -20,7 +20,7 @@ const Navbar = () => {
         <ul className="flex *:px-2 justify-center items-center sm:hidden *:text-tetiary">
           {NavLinks.map(link=>{
             return(
-                <Link key={link.path} href={link.path} className=" text-base text-tetiary font-medium hover:text-primaryLight" >{link.Name}</Link>
+                <Link key={link.path} href={link.path} className=" text-base text-tetiary font-medium hover:text-primary" >{link.Name}</Link>
             )
           })}
         </ul>
