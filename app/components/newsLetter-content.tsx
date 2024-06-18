@@ -12,7 +12,7 @@ interface newsLetterContentprop{
 }
 export default function NewsLetterContent(prop :newsLetterContentprop) {
     return (
-            <div className={`w-full flex flex-col justify-center items-center text-center text-secondaryLight mb-4 *:w-full *:h-80 lg:*:w-1/2 ${prop.isReverse ? "lg:flex-row" : "lg:flex-row-reverse" } lg:px-32`}>
+            <div className={`sm:flex-shrink-0 w-full flex flex-col justify-center items-center text-center text-secondaryLight mb-4 *:w-full *:h-80 lg:*:w-1/2 md:*:w-1/2 ${prop.isReverse ? "lg:flex-row | md:flex-row" : "lg:flex-row-reverse | md:flex-row-reverse" } lg:px-32`}>
             <div className="bg-tetiary px-4 py-8 flex flex-col justify-between items-center">
                 <div>
                 <h2 className="text-3xl text-primaryLight font-normal">{prop.title}</h2>
