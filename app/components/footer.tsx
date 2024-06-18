@@ -1,14 +1,14 @@
-import Link from "next/link";
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
+import Link from "next/link"
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
 import {NavLinks,SocialLinks} from  "@/lib/data"
 
 const Footer = () => {
   return (
-    <div className=" italic text-tetiary font-bold text-xs pt-32">
+    <footer className=" italic text-tetiary font-bold text-xs pt-32">
       <div className=" bg-white">
-      <div className=" border-t border-b border-tetiary">
-        <div className=" container mx-auto flex justify-between p-4 items-center lg:px-8">
+      <div className=" border-t border-b border-[rgba(9, 15, 33, 0.1)]">
+        <div className=" container mx-auto flex justify-between p-1 items-center ">
         <div className="flex items-center">
           <Link href="/">
             <Image
@@ -32,7 +32,7 @@ const Footer = () => {
         </div>
         </div>
 
-      <div className="container mx-auto flex justify-between flex-wrap p-4 lg:px-32">
+      <div className="container mx-auto flex justify-between flex-wrap p-4">
         <div>
           <ul className="flex justify-center items-center *:text-tetiary *:p-1">
             {NavLinks.map(link => {
@@ -50,8 +50,8 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className="container mx-auto w-3/5 m-auto border-tetiary border-t"></div>
-      <div className="container mx-auto flex justify-between items-center flex-wrap px-4 pt-4 pb-10 lg:px-32">
+      <div className="container mx-auto w-full  m-auto border-tetiary border-t"></div>
+      <div className="container mx-auto flex justify-between items-center flex-wrap px-4 pt-4 pb-5">
         <p className="text-primaryDark">Copyright© 2023-2024 @ MCoffee</p>
         <div className="flex">
           {SocialLinks.map(link=>{
@@ -63,7 +63,7 @@ const Footer = () => {
       
       </div>
     </div>
-      </div>
+    </footer>
   );
 };
 
