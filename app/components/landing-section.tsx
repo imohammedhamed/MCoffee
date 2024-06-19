@@ -33,11 +33,11 @@ export default function LandingSection() {
                 <p className="italic font-bold text-xs text-DarkBlue lg:text-sm lg:font-normal lg:not-italic">
                     <span className=' font-bold'>MCoffee: </span>Your Online Destination for Premium Coffee
                 </p>
-                <h1 className="text-2xl font-normal text-DarkBlue py-2 lg:font-bold lg:text-6xl">
+                <h1 className="text-3xl text-DarkBlue py-2 font-bold lg:text-6xl">
                     Where Every Cup <br />
                     Holds a Moment of Magic
                 </h1>
-                <p className="italic text-xs text-lightGrey lg:not-italic pt-5 lg:font-normal lg:text-lg">
+                <p className="italic text-xs text-lightGrey lg:not-italic pt-7 sm:pt-2 font-normal lg:text-lg">
                     Find the perfect brew to enhance your workday, and <br />
                     enjoy the finest coffee delivered right to your door.
                 </p>
