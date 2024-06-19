@@ -51,6 +51,9 @@
     --ring: 224.3 76.3% 48%;
   }
 }
+.FANCY-BORDER-RADIUS{
+  border-radius: 40% 60% 73% 27% / 78% 18% 82% 22%   ;
+}
 
 
 * {
