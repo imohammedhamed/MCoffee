@@ -4,14 +4,14 @@ import {   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
-  SheetFooter, } from "@/components/ui/sheet";
+ } from "@/components/ui/sheet";
 import Link from "next/link";
 import Image from "next/image";
 import {NavLinks} from "@/lib/data"
 import { FaAlignRight } from "react-icons/fa6";
 const Navbar = () => {
   return (
-    <nav className="bg-white px-4 py-1 border lg:px-32">
+    <nav className="bg-white px-0 py-1 border lg:px-32">
       <div className="container mx-auto flex justify-between items-center">
       <div className="flex items-center">
         <span>
@@ -35,7 +35,7 @@ const Navbar = () => {
       <div>
         <span className="lg:hidden md:hidden">
           <Sheet>
-          <SheetTrigger><FaAlignRight className=" text-Blue600 text-4xl mt-2 mr-5"/></SheetTrigger>
+          <SheetTrigger><FaAlignRight className=" text-Blue600 text-4xl mt-2 mr-2"/></SheetTrigger>
             <SheetContent>
               <SheetHeader className="border-b border-Blue600 py-2">
                 <SheetTitle className="text-Blue600">NavBar Menu</SheetTitle>
@@ -46,6 +46,18 @@ const Navbar = () => {
                       <Link key={link.path} href={link.path} className=" text-base font-semibold hover:text-Blue600" >{link.Name}</Link>
                   )
                 })}
+            <Button variant="outline" className="border border-Blue600 w-full">
+              <Image
+                src="/signinIcon.svg"
+                height={25}
+                width={25}
+                alt="Logo"
+                className="pr-2"
+              />
+              <Link href="/login" className="text-Blue600 text-sm font-extrabold">
+                Sign In
+              </Link>
+            </Button>
             </ul>
             </SheetContent>
           </Sheet>
@@ -59,7 +71,7 @@ const Navbar = () => {
             className="pr-2"
           />
           <Link href="/login" className="text-Blue600 text-sm font-extrabold">
-            Sign Up
+            Sign In
           </Link>
         </Button>
       </div>
