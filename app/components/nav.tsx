@@ -1,7 +1,14 @@
 import { Button } from "@/components/ui/button";
+import {   Sheet,
+  SheetTrigger,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetFooter, } from "@/components/ui/sheet";
 import Link from "next/link";
 import Image from "next/image";
 import {NavLinks} from "@/lib/data"
+import { FaAlignRight } from "react-icons/fa6";
 const Navbar = () => {
   return (
     <nav className="bg-white px-4 py-1 border lg:px-32">
@@ -27,12 +34,21 @@ const Navbar = () => {
       </div>
       <div>
         <span className="lg:hidden md:hidden">
-          <Image
-            src="/menuIcon.svg"
-            height={35}
-            width={40}
-            alt="Logo"
-          />
+          <Sheet>
+          <SheetTrigger><FaAlignRight className=" text-Blue600 text-4xl mt-2 mr-5"/></SheetTrigger>
+            <SheetContent>
+              <SheetHeader className="border-b border-Blue600 py-2">
+                <SheetTitle className="text-Blue600">NavBar Menu</SheetTitle>
+              </SheetHeader>
+            <ul className="flex flex-col *:py-2 justify-center items-start *:text-DarkBlue">
+                {NavLinks.map(link=>{
+                  return(
+                      <Link key={link.path} href={link.path} className=" text-base font-semibold hover:text-Blue600" >{link.Name}</Link>
+                  )
+                })}
+            </ul>
+            </SheetContent>
+          </Sheet>
         </span>
         <Button variant="outline" className="border border-Blue600 sm:hidden">
           <Image
