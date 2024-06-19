@@ -3,13 +3,13 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("POSTGRES_URL") // uses connection pooling
+  provider = "mongodb"
+  url      = env("MONGODB_URL")
 }
 
 // User model
 model User {
-  id        String    @id @default(uuid())
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
   email     String    @unique
   password  String
   fullName  String
@@ -17,22 +17,22 @@ model User {
   profile   Profile?
   addresses Address[]
   orders    Order[]
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime  @updatedAt @map("updated_at")
 }
 
 // Profile model
 model Profile {
-  id      String  @id @default(uuid())
-  userId  String  @unique
+  id      String  @id @default(auto()) @map("_id") @db.ObjectId
+  userId  String  @unique @db.ObjectId
   picture String?
   user    User    @relation(fields: [userId], references: [id])
 }
 
 // Address model
 model Address {
-  id              String  @id @default(uuid())
-  userId          String
+  id              String  @id @default(auto()) @map("_id") @db.ObjectId
+  userId          String  @db.ObjectId
   area            String
   streetName      String?
   buildingType    String?
@@ -45,47 +45,38 @@ model Address {
 
 // Category model
 model Category {
-  id    String @id @default(uuid())
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
   name  String
   items Item[]
 }
 
 // Item model
 model Item {
-  id          String       @id @default(uuid())
+  id          String       @id @default(auto()) @map("_id") @db.ObjectId
   title       String
   picture     String
   price       Float
-  categoryId  String
+  categoryId  String       @db.ObjectId
   category    Category     @relation(fields: [categoryId], references: [id])
   preferences Preference[]
 }
 
 // Preference model
 model Preference {
-  id         String  @id @default(uuid())
+  id         String  @id @default(auto()) @map("_id") @db.ObjectId
   size       String
   coffeeType String
-  extraShot  Boolean
+  extraShot  String?
   milkType   String
-  itemId     String
+  itemId     String  @db.ObjectId
   item       Item    @relation(fields: [itemId], references: [id])
 }
 
 // Order model
 model Order {
-  id        String   @id @default(uuid())
-  userId    String
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String   @db.ObjectId
   items     Json
-  createdAt DateTime @default(now())
+  createdAt DateTime @default(now()) @map("created_at")
   user      User     @relation(fields: [userId], references: [id])
 }
-
-// Explanation
-// User: Stores user details and has a one-to-one relation with Profile and one-to-many relations with Address and Order.
-// Profile: Stores additional user details like profile picture. This has a one-to-one relation with User.
-// Address: Stores user addresses with a one-to-many relation to User.
-// Category: Represents categories like hot drinks, ice drinks, breakfast, dessert. This has a one-to-many relation with Item.
-// Item: Represents menu items and includes details like picture, title, price. This has a many-to-one relation with Category and a one-to-many relation with Preference.
-// Preference: Stores user preferences for an item such as size, coffee type, extra shot, milk type. This has a many-to-one relation with Item.
-// Order: Represents user orders and stores details in JSON format. This has a many-to-one relation with User.

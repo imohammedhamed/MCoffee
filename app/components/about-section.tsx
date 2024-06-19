@@ -7,8 +7,8 @@ export default function AboutSection() {
         <>
             <section id='about' className='container mx-auto'>
             <SectionHeading> About Us </SectionHeading>
-            <div className=" text-primaryDark flex justify-between items-center gap-5 lg:gap-24 sm:flex-col">
-                    <div className='FANCY-BORDER-RADIUS | bg-gradient-to-t from-primaryLight/50 to-secondaryLight p-5'>
+            <div className=" text-DarkBlue flex justify-between items-center gap-5 lg:gap-24 sm:flex-col">
+                    <div className='FANCY-BORDER-RADIUS | bg-gradient-to-t from-Blue300/50 to-Blue50 p-5'>
                         <Image src={CFShop} alt='about img' width={600} height={100}/>
                     </div>
                 <p className=' text-2xl sm:text-center'>
