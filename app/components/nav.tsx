@@ -20,7 +20,7 @@ const Navbar = () => {
         <ul className="flex *:px-2 justify-center items-center sm:hidden *:text-tetiary">
           {NavLinks.map(link=>{
             return(
-                <Link key={link.path} href={link.path} className=" text-base text-tetiary font-medium hover:text-primary" >{link.Name}</Link>
+                <Link key={link.path} href={link.path} className=" text-base text-DarkBlue font-semibold hover:text-Blue600" >{link.Name}</Link>
             )
           })}
         </ul>
@@ -34,7 +34,7 @@ const Navbar = () => {
             alt="Logo"
           />
         </span>
-        <Button variant="outline" className="border border-primary sm:hidden">
+        <Button variant="outline" className="border border-Blue600 sm:hidden">
           <Image
             src="/signinIcon.svg"
             height={25}
@@ -42,7 +42,7 @@ const Navbar = () => {
             alt="Logo"
             className="pr-2"
           />
-          <Link href="/login" className="text-primary text-sm font-extrabold">
+          <Link href="/login" className="text-Blue600 text-sm font-extrabold">
             Sign Up
           </Link>
         </Button>
