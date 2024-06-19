@@ -52,7 +52,7 @@ const Footer = () => {
       </div>
       <div className="container mx-auto w-full  m-auto border-DarkBlue border-t"></div>
       <div className="container mx-auto flex justify-between items-center flex-wrap px-4 pt-4 pb-5">
-        <p className="text-primaryDark">Copyright© 2023-2024 @ MCoffee</p>
+        <p className="text-DarkBlue">Copyright© 2023-2024 @ MCoffee</p>
         <div className="flex">
           {SocialLinks.map(link=>{
             return(

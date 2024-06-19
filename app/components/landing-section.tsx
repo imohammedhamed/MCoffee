@@ -33,11 +33,11 @@ export default function LandingSection() {
                 <p className="italic font-bold text-xs text-DarkBlue lg:text-sm lg:font-normal lg:not-italic">
                     <span className=' font-bold'>MCoffee: </span>Your Online Destination for Premium Coffee
                 </p>
-                <h1 className="text-3xl text-DarkBlue py-2 font-bold lg:text-6xl">
+                <h1 className="text-2xl text-DarkBlue py-2 font-bold lg:text-6xl">
                     Where Every Cup <br />
                     Holds a Moment of Magic
                 </h1>
-                <p className="italic text-xs text-lightGrey lg:not-italic pt-7 sm:pt-2 font-normal lg:text-lg">
+                <p className="italic text-xs text-lightGrey lg:not-italic pt-7 sm:pt-0 font-normal lg:text-lg">
                     Find the perfect brew to enhance your workday, and <br />
                     enjoy the finest coffee delivered right to your door.
                 </p>
@@ -45,15 +45,15 @@ export default function LandingSection() {
                 <div className="flex justify-center items-center gap-4 py-4">
                 <div className="flex *:-mx-2">
                     <Avatar>
-                    <AvatarImage src="/" />
+                    <AvatarImage src="https://i.pinimg.com/564x/b8/36/73/b83673c019229f8dab4560a3baab099c.jpg" />
                     <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
                     <Avatar>
-                    <AvatarImage src="/" />
+                    <AvatarImage src="https://i.pinimg.com/564x/22/01/12/220112ce9c3967e2022ce13673a9d4f6.jpg" />
                     <AvatarFallback>AD</AvatarFallback>
                     </Avatar>
                     <Avatar>
-                    <AvatarImage src="/" />
+                    <AvatarImage src="https://i.pinimg.com/564x/e2/8f/cb/e28fcbb4d90dbdbf694e2e2716fa5b5c.jpg" />
                     <AvatarFallback>MO</AvatarFallback>
                     </Avatar>
                 </div>
@@ -78,7 +78,7 @@ export default function LandingSection() {
                     variant="ghost"
                     className="border border-DarkBlue text-sm font-extrabold"
                     >
-                    <Link href="/login" className="text-DarkBlue">
+                    <Link href="/Menu" className="text-DarkBlue">
                     Browse Menu
                     </Link>
                 </Button>
