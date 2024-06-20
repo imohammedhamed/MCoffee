@@ -10,7 +10,7 @@ interface PreferenceProps{
     categoryId:string | undefined
 }
 export default function Preference({title,picture,price,categoryId}:PreferenceProps) {
-    const isItfood = categoryId === "666db6644e24052c772117f8" || categoryId === "666db6254e24052c772117f0";
+    const isItfood = categoryId === "6673aacc848eb720e9daeacf" || categoryId === "6673aacc848eb720e9daeace";
   return (
     <section className=' container mx-auto pt-24 pb-24'>
         <div className=' flex justify-center items-center flex-col pb-10'>

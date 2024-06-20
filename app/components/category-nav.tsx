@@ -14,7 +14,7 @@ export default function CategoryNav({Name,Id,Active}:CategoryNavProps) {
     const router = useRouter()
     
     function handleClick(){
-        if(Id==="666f62470a947d597a3e15bb"){
+        if(Id==="6673aacd848eb720e9daead0"){
             router.push(`/Menu`)
         }else{
             router.push(`/Menu/${Id}`)
