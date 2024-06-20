@@ -55,7 +55,7 @@ const Navbar = () => {
                 className="pr-2"
               />
               <Link href="/login" className="text-Blue600 text-sm font-extrabold">
-                Sign In
+              Log In
               </Link>
             </Button>
             </ul>
@@ -71,7 +71,7 @@ const Navbar = () => {
             className="pr-2"
           />
           <Link href="/login" className="text-Blue600 text-sm font-extrabold">
-            Sign In
+            Log In
           </Link>
         </Button>
       </div>

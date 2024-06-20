@@ -69,7 +69,7 @@ export default function LandingSection() {
                 <div className="flex gap-4">
                 <Button>
                     <Link
-                    href="/login"
+                    href="/signup"
                     className="text-secondary text-sm font-extrabold">
                     Join Us
                     </Link>

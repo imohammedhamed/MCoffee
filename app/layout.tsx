@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
-import Footer from "./components/footer";
-import Navbar from "./components/nav";
 import { cn } from "@/lib/utils";
 
 const openSans = Open_Sans({
@@ -26,15 +24,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(' bg-Blue50 h-full font-sans',openSans.className)}>
-        <main className=" flex flex-col min-h-screen">
-        <Navbar />
-        <div className=" flex-grow flex-1">
         {children}
-        </div>
-        <Footer />
-        </main>
       </body>
     </html>
   );
 }
-//` bg-secondaryLight ${openSans.className}`
