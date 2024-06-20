@@ -1,4 +1,4 @@
-import MenuSection from "@/app/components/menu-section"
+import MenuSection from "../../components/menu-section"
 export default async function Categories_Items({params}:any) {
 
       return (

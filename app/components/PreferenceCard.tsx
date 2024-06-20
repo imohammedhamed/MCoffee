@@ -5,7 +5,8 @@ import { FaCircle } from "react-icons/fa6";
 interface PreferenceCardHeaderProps{
     title:String | undefined,
     paraParagraph:String | undefined
-    PreferenceCardArr: readonly{ id: string; name: string }[]
+    PreferenceCardArr: readonly{ id: string; name: string }[],
+    
 }
 
 export default function PreferenceCard({title,paraParagraph,PreferenceCardArr}:PreferenceCardHeaderProps) {
@@ -25,10 +26,10 @@ export default function PreferenceCard({title,paraParagraph,PreferenceCardArr}:P
             PreferenceCardArr.map(item =>{
               return(
                 <ul key={item.id} role='list'  onClick={() => handleClick(item.id)} className='flex justify-between items-center w-fulls rounded-lg cursor-pointer px-2 | lg:hover:border border-solid border-lightBlue'>
-                <li key={item.id} className='text-xl pt-2 pb-2 text-DarkBlue no-underline'>{item.name}</li>
-                <FaCircle key={item.id} className={IsFaCircle === item.id ? `text-Blue600` : `text-gray-500`}/>
+                <li  className='text-xl pt-2 pb-2 text-DarkBlue no-underline'>{item.name}</li>
+                <FaCircle className={IsFaCircle === item.id ? `text-Blue600` : `text-gray-500`}/>
                 </ul>
-              )
+              ) // this just to try fix this bug 
             })
           }
         </div>
