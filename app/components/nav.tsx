@@ -35,7 +35,7 @@ const Navbar = () => {
       <div>
         <span className="lg:hidden md:hidden">
           <Sheet>
-          <SheetTrigger><FaAlignRight className=" text-Blue600 text-4xl mt-2 mr-2"/></SheetTrigger>
+          <SheetTrigger><FaAlignRight className=" text-Blue600 text-4xl mt-2 mr-5"/></SheetTrigger>
             <SheetContent>
               <SheetHeader className="border-b border-Blue600 py-2">
                 <SheetTitle className="text-Blue600">NavBar Menu</SheetTitle>

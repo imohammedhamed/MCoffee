@@ -49,7 +49,7 @@ export default async function MenuSection({categoryId}:MenuSectionProps) {
           key={category.id}
           Name={category.name}
           Id={category.id}
-          Active ={categoryId || "666f62470a947d597a3e15bb"}
+          Active ={categoryId || "6673aacd848eb720e9daead0"}
           />
         )
       })}
