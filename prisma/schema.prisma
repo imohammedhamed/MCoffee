@@ -8,29 +8,29 @@ datasource db {
 }
 
 // User model
-model User {
+model user {
   id        String    @id @default(auto()) @map("_id") @db.ObjectId
   email     String    @unique
   password  String
   fullName  String
   phone     String
-  profile   Profile?
-  addresses Address[]
-  orders    Order[]
+  profile   profile?
+  addresses address[]
+  orders    order[]
   createdAt DateTime  @default(now()) @map("created_at")
   updatedAt DateTime  @updatedAt @map("updated_at")
 }
 
 // Profile model
-model Profile {
+model profile {
   id      String  @id @default(auto()) @map("_id") @db.ObjectId
   userId  String  @unique @db.ObjectId
   picture String?
-  user    User    @relation(fields: [userId], references: [id])
+  user    user    @relation(fields: [userId], references: [id])
 }
 
 // Address model
-model Address {
+model address {
   id              String  @id @default(auto()) @map("_id") @db.ObjectId
   userId          String  @db.ObjectId
   area            String
@@ -40,43 +40,43 @@ model Address {
   floorNumber     String?
   apartmentNumber String
   mobileNumber    String
-  user            User    @relation(fields: [userId], references: [id])
+  user            user    @relation(fields: [userId], references: [id])
 }
 
 // Category model
-model Category {
+model category {
   id    String @id @default(auto()) @map("_id") @db.ObjectId
   name  String
-  items Item[]
+  items item[]
 }
 
 // Item model
-model Item {
+model item {
   id          String       @id @default(auto()) @map("_id") @db.ObjectId
   title       String
   picture     String
   price       Float
   categoryId  String       @db.ObjectId
-  category    Category     @relation(fields: [categoryId], references: [id])
-  preferences Preference[]
+  category    category     @relation(fields: [categoryId], references: [id])
+  preferences preference[]
 }
 
 // Preference model
-model Preference {
+model preference {
   id         String  @id @default(auto()) @map("_id") @db.ObjectId
   size       String
   coffeeType String
   extraShot  String?
   milkType   String
   itemId     String  @db.ObjectId
-  item       Item    @relation(fields: [itemId], references: [id])
+  item       item    @relation(fields: [itemId], references: [id])
 }
 
 // Order model
-model Order {
+model order {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
   userId    String   @db.ObjectId
   items     Json
   createdAt DateTime @default(now()) @map("created_at")
-  user      User     @relation(fields: [userId], references: [id])
+  user      user     @relation(fields: [userId], references: [id])
 }
