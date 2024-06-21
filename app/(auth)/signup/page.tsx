@@ -56,10 +56,10 @@ export default function Signup() {
             console.error("there's a problem some where")
         }
       }
-  return (    
+  return (  // of the s
         <>
          <div className=' flex flex-row justify-between items-center'>
-            <div className=' w-1/3 container px-28 pb-10'>
+            <div className=' lg:w-1/3  container min-h-screen lg:px-28 lg:pb-10 pt-24'>
             <h2 className='text-6xl font-bold text-DarkBlue py-10'><span className='text-Blue600'>S</span>ign Up</h2>
             
             <Form {...form}>
@@ -77,6 +77,7 @@ export default function Signup() {
                     </FormItem>
                 )}
                 />
+                
                 <FormField
                 control={form.control}
                 name="email"
@@ -135,18 +136,18 @@ export default function Signup() {
             </form>
             </Form>
             </div>
-            <div className=' bg-Blue100 h-screen w-2/4'>
+            <div className=' bg-Blue100 h-screen w-2/4 sm:hidden'>
             <div className=' flex min-h-screen justify-center items-center'>
             <Image src={loginImgSrc} alt='Login Img' width={500} height={150}/>
             </div>
             </div>
          </div>
-         <div className=' absolute top-10 left-24 flex justify-center items-center gap-2 text-Blue600 hover:gap-3 transition-all '>
+         <div className=' absolute top-10 lg:left-24 left-10 flex justify-center items-center gap-2 text-Blue600 hover:gap-3 transition-all '>
             <FaArrowLeft/>
             <Link href='/'>Go back</Link>
          </div>
-         <p className=" absolute bottom-0 right-5 py-2 text-DarkBlue font-semibold text-xs">Copyright© 2023-2024 @ MCoffee</p>
-
+        <p className="absolute bottom-0 right-5 py-2 text-DarkBlue font-semibold text-xs">Copyright© 2023-2024 @ MCoffee</p>
+        
         </>
   )
 }

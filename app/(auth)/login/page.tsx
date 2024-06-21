@@ -53,7 +53,7 @@ export default function Login() {
   return (
     <>
       <div className='flex flex-row justify-between items-center'>
-        <div className='w-1/3 container px-28 pb-28'>
+        <div className='lg:w-1/3  container min-h-screen lg:px-28 lg:pb-10 pt-24'>
           <h2 className='text-6xl font-bold text-DarkBlue py-10'>
             <span className='text-Blue600'>L</span>og In
           </h2>
@@ -94,13 +94,13 @@ export default function Login() {
             </form>
           </Form>
         </div>
-        <div className='bg-Blue100 h-screen w-2/4'>
+        <div className='bg-Blue100 h-screen w-2/4 sm:hidden'>
           <div className='flex min-h-screen justify-center items-center'>
             <Image src={loginImgSrc} alt='Login Img' width={500} height={150} />
           </div>
         </div>
       </div>
-      <div className='absolute top-10 left-24 flex justify-center items-center gap-2 text-Blue600 hover:gap-3 transition-all '>
+      <div className='absolute top-10 lg:left-24 left-10 flex justify-center items-center gap-2 text-Blue600 hover:gap-3 transition-all '>
         <FaArrowLeft />
         <Link href='/'>Go back</Link>
       </div>
