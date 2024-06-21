@@ -5,6 +5,7 @@ import loginImgSrc from '@/public/illustration4.svg'
 import Link from 'next/link'
 import { FaArrowLeft } from "react-icons/fa6";
 import { Button } from "@/components/ui/button"
+import { useRouter } from 'next/navigation'
 import {
   Form,
   FormControl,
@@ -17,21 +18,43 @@ import { Input } from "@/components/ui/input"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
-export default function page() {
+export default function Signup() {
+    const router = useRouter()
     const formSchema = z.object({
         email: z.string(),
-        password: z.string(),
         fullName : z.string(),
+        phone : z.string(),
+        password: z.string(),
         confirmPassword :z.string(),
       })
       const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
             email: "",
+            fullName: "",
+            phone: "",
+            password: "",
+            confirmPassword: "",
         },
       })
-    function onSubmit(values: z.infer<typeof formSchema>) {
-        console.log(values)
+    async function onSubmit(values: z.infer<typeof formSchema>) {
+        const respons = await fetch('api/users',{
+            method:'POST',
+            headers:{'content-type':'application'},
+            body: JSON.stringify({
+                email: values.email,
+                fullName: values.fullName,
+                phone: values.phone,
+                password: values.password,
+                confirmPassword: values.confirmPassword,
+            }),
+        });
+
+        if(respons.ok){
+            router.push('/login')
+        }else{
+            console.error("there's a problem some where")
+        }
       }
   return (    
         <>
@@ -61,7 +84,20 @@ export default function page() {
                     <FormItem>
                     <FormLabel>Email</FormLabel>
                     <FormControl>
-                        <Input placeholder="enter your email" {...field} />
+                        <Input placeholder="enter your email" type="email" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                    </FormItem>
+                )}
+                />
+                <FormField
+                control={form.control}
+                name="phone"
+                render={({ field }) => (
+                    <FormItem>
+                    <FormLabel>phone</FormLabel>
+                    <FormControl>
+                        <Input placeholder="enter your phone number" type="text" {...field} />
                     </FormControl>
                     <FormMessage />
                     </FormItem>
@@ -74,7 +110,7 @@ export default function page() {
                     <FormItem>
                     <FormLabel>password</FormLabel>
                     <FormControl>
-                        <Input placeholder="enter your password" {...field} />
+                        <Input placeholder="enter your password" type='password' {...field} />
                     </FormControl>
                     <FormMessage />
                     </FormItem>
@@ -85,9 +121,9 @@ export default function page() {
                 name="confirmPassword"
                 render={({ field }) => (
                     <FormItem>
-                    <FormLabel>Confirm Password...</FormLabel>
+                    <FormLabel>Confirm Password</FormLabel>
                     <FormControl>
-                        <Input placeholder="enter your password again" {...field} />
+                        <Input placeholder="enter your password again" type='password' {...field} />
                     </FormControl>
                     <FormMessage />
                     </FormItem>
@@ -95,7 +131,7 @@ export default function page() {
                 />
                 <br />
                 <Button type="submit" className=' w-full'>Submit</Button>
-                <p className=' text-sm text-DarkBlue'>IF YOU HAVE AN ACCOUNT ? <Link href='/login' className=' font-semibold text-Blue600 hover:underline'>LOG IN</Link></p>
+                <p className=' text-sm text-DarkBlue p-2'>IF YOU HAVE AN ACCOUNT ? <Link href='/login' className=' font-semibold text-Blue600 hover:underline'>LOG IN</Link></p>
             </form>
             </Form>
             </div>

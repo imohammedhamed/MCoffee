@@ -9,7 +9,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 export default function LandingSection() {
     return (
         <>
-        <div className="bg-gradient-to-t from-Blue100/90 to-white flex justify-center items-center pt-32 pb-44 lg:pt-48 lg:pb-60 ">
+        <div className="bg-gradient-to-t from-Blue300/75 to-white flex justify-center items-center pt-32 pb-44 lg:pt-48 lg:pb-60 ">
             <div className=" container mx-auto flex flex-wrap justify-center border-b-2 border-DarkBlue rounded-3xl items-center lg:justify-between lg:flex-row-reverse md:flex-row-reverse lg:gap-16">
             <div className="relative">
                 {/* home images */}
@@ -70,13 +70,13 @@ export default function LandingSection() {
                 <Button>
                     <Link
                     href="/signup"
-                    className="text-secondary text-sm font-extrabold">
+                    className="text-secondary text-sm lg:text-lg p-4 font-extrabold">
                     Join Us
                     </Link>
                 </Button>
                 <Button
                     variant="ghost"
-                    className="border border-DarkBlue text-sm font-extrabold"
+                    className="border border-DarkBlue text-sm lg:text-lg p-4 font-extrabold"
                     >
                     <Link href="/Menu" className="text-DarkBlue">
                     Browse Menu
