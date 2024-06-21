@@ -1,6 +1,6 @@
 import React from 'react'
 import prisma from '@/lib/prisma'
-import Preference from '../../../components/Preference';
+import Preference from '../../../../components/Preference';
 
 export default async function ItemPreference({ params }: { params: { id: string; categoryId: string } }) {
     async function getuniqueItem(){
