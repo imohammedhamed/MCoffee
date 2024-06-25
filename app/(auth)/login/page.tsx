@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import loginImgSrc from '@/public/illustration5.svg'
 import Link from 'next/link'
@@ -19,9 +19,10 @@ import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
-
+import { toast } from 'react-hot-toast';
 export default function Login() {
   const router = useRouter()
+  const [loading, setLoading] = useState(false);
 
   const formSchema = z.object({
     email: z.string().email({ message: "Invalid email address" }),
@@ -37,6 +38,7 @@ export default function Login() {
   })
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
+    setLoading(true);
     const loginData = await signIn('credentials', {
       redirect: false,
       email: values.email,
@@ -44,10 +46,13 @@ export default function Login() {
     })
 
     if (loginData?.ok) {
+      toast.success(`Successfully authenticated`);
       router.push('/')
+      router.refresh()
     } else {
-      console.error(loginData?.error)
+      toast.error('!!Useremail or password is incorrect')
     }
+    setLoading(false);
   }
 
   return (
@@ -87,7 +92,7 @@ export default function Login() {
                 )}
               />
               <br />
-              <Button type="submit" className='w-full'>Submit</Button>
+              <Button type="submit" disabled={loading} className='w-full'>{loading ? <span className="loading loading-dots loading-sm"></span> :`Submit`}</Button>
               <p className='text-sm text-DarkBlue p-2'>
                 IF YOU {`DON'T`} HAVE AN ACCOUNT ? <Link href='/signup' className='font-semibold text-Blue600 hover:underline'>SIGN UP</Link>
               </p>

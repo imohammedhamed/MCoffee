@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-
+import { Toaster } from 'react-hot-toast'
 const openSans = Open_Sans({
   subsets: ["latin"],
   weight: ["400"],
@@ -24,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(' bg-Blue50 h-full font-sans',openSans.className)}>
+      <Toaster position="top-center" />
         {children}
       </body>
     </html>

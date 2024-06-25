@@ -34,10 +34,10 @@ model address {
   id              String  @id @default(auto()) @map("_id") @db.ObjectId
   userId          String  @db.ObjectId
   area            String
-  streetName      String?
-  buildingType    String?
+  streetName      String
+  buildingType    String
   buildingNumber  String
-  floorNumber     String?
+  floorNumber     String
   apartmentNumber String
   mobileNumber    String
   user            user    @relation(fields: [userId], references: [id])

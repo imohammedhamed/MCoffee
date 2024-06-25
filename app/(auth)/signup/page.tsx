@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React,{useState} from 'react'
 import Image from 'next/image'
 import loginImgSrc from '@/public/illustration4.svg'
 import Link from 'next/link'
@@ -18,6 +18,7 @@ import { Input } from "@/components/ui/input"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
+import { toast } from 'react-hot-toast';
 
 const formSchema = z.object({
   email: z.string().email({ message: "Invalid email address" }),
@@ -32,6 +33,7 @@ const formSchema = z.object({
 
 export default function Signup() {
   const router = useRouter()
+  const [loading, setLoading] = useState(false);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -44,6 +46,7 @@ export default function Signup() {
   })
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
+    setLoading(true)
     const response = await fetch('/api/users', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -57,10 +60,13 @@ export default function Signup() {
     });
 
     if (response.ok) {
+      toast.success('sign Up  Successfully');
       router.push('/login')
+      router.refresh()
     } else {
-      console.error("There's a problem somewhere")
+      toast.error('This account already exists try to login ')
     }
+    setLoading(false)
   }
 
   return (
@@ -140,7 +146,7 @@ export default function Signup() {
                 )}
               />
               <br />
-              <Button type="submit" className='w-full'>Submit</Button>
+              <Button type="submit" disabled={loading} className='w-full'>{loading? <span className="loading loading-dots loading-sm"></span> :`Submit`}</Button>
               <p className='text-sm text-DarkBlue p-2'>
                 IF YOU HAVE AN ACCOUNT? <Link href='/login' className='font-semibold text-Blue600 hover:underline'>LOG IN</Link>
               </p>
