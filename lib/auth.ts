@@ -1,11 +1,11 @@
-import { NextAuthOptions } from "next-auth"
+import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { PrismaAdapter } from "@next-auth/prisma-adapter"
+import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import prisma from "./prisma";
 
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
-  secret: process.env.NEXTAUTH_SECRET,
+  secret: process.env.NEXT_AUTH,
   pages: {
     signIn: "/login",
   },
@@ -24,9 +24,15 @@ export const authOptions: NextAuthOptions = {
           throw new Error("Email and password are required");
         }
 
-        const user = await prisma.user.findUnique({
+        // Fetch user including related data using Prisma
+        const user:any = await prisma.user.findUnique({
           where: {
             email: credentials.email,
+          },
+          include: {
+            profile: true,
+            addresses: true,
+            orders: true
           }
         });
 
@@ -34,12 +40,41 @@ export const authOptions: NextAuthOptions = {
           throw new Error("Invalid email or password");
         }
 
+        // Return user data including profile, addresses, and orders
         return {
           id: user.id,
           name: user.fullName,
-          email: user.email
+          email: user.email,
+          profile: user.profile,
+          addresses: user.addresses,
+          orders: user.orders
         };
       }
     })
   ],
-}
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) {
+        return {
+          ...token,
+          id: user.id
+        };
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      return {
+        ...session,
+        user: {
+          ...session.user,
+          id: token.id,
+          name: token.name,
+          email: token.email,
+          profile: token.profile,
+          addresses: token.addresses,
+          orders: token.orders
+        }
+      };
+    },
+  }
+};
