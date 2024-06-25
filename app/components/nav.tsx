@@ -8,8 +8,18 @@ import {  Sheet,
 import Link from "next/link";
 import Image from "next/image";
 import {NavLinks} from "@/lib/data"
-import { FaAlignRight } from "react-icons/fa6";
-const Navbar = () => {
+import { FaAlignRight ,FaRegCircleUser   } from "react-icons/fa6";
+import { authOptions } from "@/lib/auth";
+import { getServerSession } from "next-auth";
+import UserAccountBtn from "./user-account-btn";
+const Navbar = async () => {
+  const session = await getServerSession(authOptions)
+  var userHere:boolean;
+  if(session){
+    userHere=false
+  }else{
+    userHere=true
+  }
   return (
     <nav className="bg-white px-0 py-1 border lg:px-32">
       <div className="container mx-auto flex justify-between items-center">
@@ -27,7 +37,7 @@ const Navbar = () => {
         <ul className="flex *:px-2 justify-center items-center sm:hidden *:text-tetiary">
           {NavLinks.map(link=>{
             return(
-                <Link key={link.path} href={link.path} className=" text-base text-DarkBlue font-semibold hover:text-Blue600" >{link.Name}</Link>
+              <Link key={link.path} href={link.path} className=" text-base text-DarkBlue font-semibold hover:text-Blue600" >{link.Name}</Link>
             )
           })}
         </ul>
@@ -40,40 +50,37 @@ const Navbar = () => {
               <SheetHeader className="border-b border-Blue600 py-2">
                 <SheetTitle className="text-Blue600">NavBar Menu</SheetTitle>
               </SheetHeader>
-            <ul className="flex flex-col *:py-2 justify-center items-start *:text-DarkBlue">
+                <ul className="flex flex-col *:py-2 justify-center items-start *:text-DarkBlue">
                 {NavLinks.map(link=>{
                   return(
-                      <Link key={link.path} href={link.path} className=" text-base font-semibold hover:text-Blue600" >{link.Name}</Link>
+                    <Link key={link.path} href={link.path} className=" text-base font-semibold hover:text-Blue600" >{link.Name}</Link>
                   )
                 })}
-            <Button variant="outline" className="border border-Blue600 w-full">
-              <Image
-                src="/signinIcon.svg"
-                height={25}
-                width={25}
-                alt="Logo"
-                className="pr-2"
-              />
-              <Link href="/login" className="text-Blue600 text-sm font-extrabold">
-              Log In
-              </Link>
-            </Button>
+                <div className=" border-b border-lightGrey w-full"></div>
+                {
+                  userHere?(<Button variant="outline" className="border border-Blue600 w-full flex justify-center items-center gap-2"> 
+                      <FaRegCircleUser  className=" text-Blue600 text-base"/>
+                      <Link href="/login" className="text-Blue600 text-sm font-extrabold">
+                      Log In
+                      </Link>
+                  </Button>):(<UserAccountBtn className=" flex-col justify-center w-full"/>)
+                
+                }
             </ul>
             </SheetContent>
           </Sheet>
         </span>
-        <Button variant="outline" className="border border-Blue600 sm:hidden">
-          <Image
-            src="/signinIcon.svg"
-            height={25}
-            width={25}
-            alt="Logo"
-            className="pr-2"
-          />
+        { 
+          userHere?(
+          <Button variant="outline" className="border border-Blue600 sm:hidden flex justify-between items-center gap-2">
+          <FaRegCircleUser  className=" text-Blue600 text-lg"/>
           <Link href="/login" className="text-Blue600 text-sm font-extrabold">
             Log In
           </Link>
-        </Button>
+          </Button>
+          ):(<UserAccountBtn className=" sm:hidden"/>)
+        
+        }
       </div>
       </div>
     </nav>

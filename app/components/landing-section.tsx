@@ -42,7 +42,7 @@ export default function LandingSection() {
                     enjoy the finest coffee delivered right to your door.
                 </p>
                 </div>
-                <div className="flex justify-center items-center gap-4 py-4">
+                <div className="flex justify-center items-center gap-4 py-4 px-2">
                 <div className="flex *:-mx-2">
                     <Avatar>
                     <AvatarImage src="https://i.pinimg.com/564x/b8/36/73/b83673c019229f8dab4560a3baab099c.jpg" />
