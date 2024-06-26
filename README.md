@@ -1,10 +1,13 @@
 # MCoffee
 
-Welcome to MCoffee, a coffee shop application that allows users to view the menu and order coffee online.
-## Visit
-You can visit the live page of MCoffee [here](https://m-coffee-chi.vercel.app/).
+Welcome to MCoffee, 
+MCoffee is a user-friendly web application designed for coffee lovers. Users can browse through the menu and place orders for their favorite coffee beverages from the comfort of their home or on the go.
 
-and you can use this enail and password 
+## Visit
+You can visit the live page of MCoffee : [here](https://m-coffee-chi.vercel.app/).
+
+and you can use this email and password  
+
 email : nu@gmail.com
 password : 123123
 
@@ -12,16 +15,12 @@ password : 123123
 ![Home Page](https://mohammed-h.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FLandingPage.005e6286.png&w=1920&q=100)
 
 ## Table of Contents
-- [Introduction](#introduction)
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Technologies](#technologies)
 - [Contributing](#contributing)
 
-## Introduction
-
-MCoffee is a user-friendly web application designed for coffee lovers. Users can browse through the menu and place orders for their favorite coffee beverages from the comfort of their home or on the go.
 
 ## Features
 
