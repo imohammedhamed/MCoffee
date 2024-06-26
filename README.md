@@ -1,7 +1,7 @@
 # MCoffee
 
 Welcome to MCoffee, 
-MCoffee is a user-friendly web application designed for coffee lovers. Users can browse through the menu and place orders for their favorite coffee beverages from the comfort of their home or on the go.
+MCoffee is a user-friendly web application designed for coffee lovers. Users can browse through the menu and search for their favorite coffee beverages from the comfort of their home or on the go.
 
 ## Visit
 You can visit the live page of MCoffee : [here](https://m-coffee-chi.vercel.app/).
