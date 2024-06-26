@@ -41,7 +41,7 @@ export default function UserInfoNav() {
                         key={content.id}
                         className={cn(
                             activeId === content.id ? 'bg-blue-600 text-white' : 'bg-transparent text-DarkBlue',
-                            "mx-2 font-semibold"
+                            "mx-1.5 font-bold"
                         )}
                     >
                         {content.name}
@@ -53,19 +53,19 @@ export default function UserInfoNav() {
                     </AlertDialogTrigger>
                     <AlertDialogContent className=' bg-Blue100 rounded-lg max-w-[350px]'>
                     <AlertDialogHeader>
-                        <AlertDialogTitle className='text-DarkBlue'>Are you absolutely sure?</AlertDialogTitle>
-                        <AlertDialogDescription>
-                        This action cannot be undone.
+                        <AlertDialogTitle className='text-Red text-2xl'>SignOut</AlertDialogTitle>
+                        <AlertDialogDescription className=' text-DarkBlue font-semibold'>
+                        Are you sure you want to SignOut?
                         </AlertDialogDescription>
                     </AlertDialogHeader>
                     <AlertDialogFooter className=' flex flex-row justify-center items-center gap-2'>
-                        <AlertDialogCancel className='bg-transparent border border-solid border-Blue600 text-Blue600 font-semibold'>Cancel</AlertDialogCancel>
-                        <Button variant="lightRed" className=' font-semibold lg:mt-2' onClick={()=>{signOut({ callbackUrl: '/' })}}>SignOut</Button>
+                        <AlertDialogCancel className='bg-transparent border border-solid border-Blue600 text-Blue600 font-bold'>No</AlertDialogCancel>
+                        <Button variant="lightRed" className=' font-bold lg:mt-2' onClick={()=>{signOut({ callbackUrl: '/' })}}>Yes</Button>
                     </AlertDialogFooter>
                     </AlertDialogContent>
                 </AlertDialog>
             </div>
-            <span className=' border-l border-lightBlue absolute right-28 h-10'></span>
+            <span className=' border-l border-lightGrey absolute right-[6.7rem] h-6'></span>
         </div>
     );
 }
