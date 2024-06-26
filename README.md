@@ -29,6 +29,13 @@ password : 123123
 - **User Authentication**: Sign up and log in to save your orders and preferences.
 - **Order History**: View past orders and reorder quickly.
 
+## Technologies
+
+- **Framework**: Next.js TypeScript
+- **Styling**: Tailwind CSS, shadcn UI Toast Notifications
+- **Database**: Prisma with MongoDB
+- **Authentication**: NextAuth JWT
+
 ## Installation
 
 Follow these steps to get a copy of the project up and running on your local machine.
@@ -54,12 +61,6 @@ Follow these steps to get a copy of the project up and running on your local mac
 
 After starting the application, you can access it in your web browser at `http://localhost:3000`. From there, you can browse the menu, select items, and place an order.
 
-## Technologies
-
-- **Framework**: Next.js TypeScript
-- **Styling**: Tailwind CSS, shadcn UI Toast Notifications
-- **Database**: Prisma with MongoDB
-- **Authentication**: NextAuth JWT
 
 ## Contributing
 
