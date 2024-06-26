@@ -75,6 +75,7 @@ export default function AddAddressCardDialog(Prop: AddAddressCardDialogProps) {
             }
         } catch (error) {
             toast.error("An error occurred while creating the address");
+
         }finally{
             setLoading(false);
 
@@ -180,7 +181,7 @@ export default function AddAddressCardDialog(Prop: AddAddressCardDialogProps) {
                                 <FormItem>
                                     <FormLabel className=' text-DarkBlue'>Mobile Number</FormLabel>
                                     <FormControl>
-                                        <Input placeholder="Your mobile number..." {...field} />
+                                        <Input placeholder="(20+) delivery is only within Egypt..." {...field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>

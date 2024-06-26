@@ -70,13 +70,13 @@ export default function LandingSection() {
                 <Button>
                     <Link
                     href="/signup"
-                    className="text-secondary text-sm lg:text-lg p-4 font-extrabold">
+                    className="text-secondary text-sm lg:text-base p-4 font-bold">
                     Join Us
                     </Link>
                 </Button>
                 <Button
                     variant="ghost"
-                    className="border border-DarkBlue text-sm lg:text-lg p-4 font-extrabold"
+                    className="border border-DarkBlue text-sm lg:text-base p-4 font-bold"
                     >
                     <Link href="/Menu" className="text-DarkBlue">
                     Browse Menu

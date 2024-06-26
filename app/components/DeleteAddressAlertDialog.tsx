@@ -6,6 +6,7 @@ import {
   AlertDialog,
   AlertDialogCancel,
   AlertDialogContent,
+  AlertDialogDescription,
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
@@ -52,11 +53,14 @@ export default function DeleteAddressAlertDialog({addressId }: DeleteAddressAler
         </AlertDialogTrigger>
         <AlertDialogContent className='bg-Blue100 rounded-lg max-w-[350px]'>
             <AlertDialogHeader>
-                <AlertDialogTitle className='text-DarkBlue'>Are you sure?</AlertDialogTitle>
+                <AlertDialogTitle className='text-Red text-2xl'>Delete address</AlertDialogTitle>
+                <AlertDialogDescription className='text-DarkBlue font-semibold'>
+                Are you sure you wish to delete this address ?
+                </AlertDialogDescription>
             </AlertDialogHeader>
             <AlertDialogFooter className='flex flex-row justify-center items-center gap-2'>
-                <AlertDialogCancel className='bg-transparent border border-solid border-Blue600 text-Blue600 font-semibold'>No</AlertDialogCancel>
-                <Button variant="lightRed" className='font-semibold lg:mt-2' disabled={loading} onClick={handleDelete}>{loading?<span className="loading loading-dots loading-sm"></span> :`Yes`}</Button>
+                <AlertDialogCancel className='bg-transparent border border-solid border-Blue600 text-Blue600 font-bold'>No</AlertDialogCancel>
+                <Button variant="lightRed" className=' font-bold lg:mt-2' disabled={loading} onClick={handleDelete}>{loading?<span className="loading loading-dots loading-sm"></span> :`Yes`}</Button>
             </AlertDialogFooter>
         </AlertDialogContent>
     </AlertDialog>
