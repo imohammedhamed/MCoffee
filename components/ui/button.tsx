@@ -20,6 +20,8 @@ const buttonVariants = cva(
         link: "text-Blue600 underline-offset-4 hover:underline",
         // New variant
         lightRed: "bg-lightRed text-Red hover:bg-Red/90 hover:text-lightRed",
+        lightBlue: "bg-Blue100 text-Blue600 hover:opacity-80",
+        ghostLightBlue:"border border-soled border-Blue600 text-Blue600  hover:bg-Blue600 hover:text-Blue50",
       },
       size: {
         default: "h-10 px-4 py-2",

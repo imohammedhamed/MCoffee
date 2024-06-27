@@ -8,7 +8,8 @@ import {
 } from "@/components/ui/avatar"
 import AddAddressCardDialog from './AddAddressCardDialog';
 import AddressCard from './AddressCard'
-
+import ChangeUserNameDialog from './ChangeUserNameDialog';
+import ChangeUserPasswordDialog from './ChangeUserPasswordDialog';
 interface Address{
   id              :String,
   area            :String,
@@ -19,6 +20,7 @@ interface Address{
   apartmentNumber :String,
   mobileNumber    :String, 
 }
+
 interface UserInfoCardProps{
   userid     :string,
   email     :String | undefined,  
@@ -26,7 +28,7 @@ interface UserInfoCardProps{
   fullName  :String | undefined,
   phone     :String | undefined,
   picture: String|undefined|null,
-  address?: Address[] | undefined | null | any,
+  address?: Address[] | undefined| any,
 }
 export default function UserInfoCard({userid,email,password,fullName,phone,picture,address}: UserInfoCardProps) {
   return (
@@ -39,21 +41,22 @@ export default function UserInfoCard({userid,email,password,fullName,phone,pictu
           </Avatar>
           </div>
           <div className=' grid grid-cols-1 gap-3 lg:grid-cols-3 lg:gap-5 py-20'>
-            <div className="grid w-full max-w-sm items-center gap-1.5">
-                <Label htmlFor="email">your fullName</Label>
-                <Input type="email" id="email" placeholder={`${fullName}`} disabled/>
+            <div className=" relative grid w-full max-w-sm items-center gap-1.5">
+                <Label htmlFor="email" className=' text-DarkBlue text-lg font-medium'>your Name</Label>
+                <Input type="email" id="email" className=' p-6 border border-solid border-lightBlue' placeholder={`${fullName}`} disabled/>
+                <ChangeUserNameDialog className=' absolute top-[3.7rem] -translate-y-1/2 right-3'
+                  userid  ={userid}
+                  password ={password}
+                  fullName ={fullName}
+                />
             </div>
-            <div className="grid w-full max-w-sm items-center gap-1.5">
-                <Label htmlFor="email">your email</Label>
-                <Input type="email" id="email" placeholder={`${email}`} disabled/>
-            </div>
-            <div className="grid w-full max-w-sm items-center gap-1.5">
-                <Label htmlFor="email">your password</Label>
-                <Input type="email" id="email" placeholder={`${password}`} disabled/>
-            </div>
-            <div className="grid w-full max-w-sm items-center gap-1.5">
-                <Label htmlFor="email">your phone Number</Label>
-                <Input type="email" id="email" placeholder={`${phone}`} disabled/>
+            <div className=" relative grid w-full max-w-sm items-center gap-1.5">
+                <Label htmlFor="password" className=' text-DarkBlue text-lg font-medium'>your password</Label>
+                <Input type="text" id="password" className=' p-6 border border-solid border-lightBlue' placeholder={`${password}`} disabled/>
+                <ChangeUserPasswordDialog className=' absolute top-[3.7rem] -translate-y-1/2 right-3'
+                  userid  ={userid}
+                  password ={password}
+                />
             </div>
           </div>
           <div className=' flex flex-col justify-center items-center'>

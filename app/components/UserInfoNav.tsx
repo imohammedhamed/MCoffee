@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React, { Dispatch, SetStateAction } from 'react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { signOut } from "next-auth/react"
@@ -12,24 +12,12 @@ import {
     AlertDialogHeader,
     AlertDialogTitle,
     AlertDialogTrigger,
-  } from "@/components/ui/alert-dialog"
-const UserInfoNavContent = [
-    {
-        id: "1",
-        name: "Account info",
-        path: "/",
-    },
-    {
-        id: "2",
-        name: "Your Orders",
-        path: "/",
-    }
-] as const;
+} from "@/components/ui/alert-dialog"
+import {UserInfoNavContent} from '@/lib/data'
 
-export default function UserInfoNav() {
-    const [activeId, setActiveId] = useState<string>("1");
+export default function UserInfoNav({activeId,setactiveId}:{activeId:string,setactiveId:Dispatch<SetStateAction<string>>}) {
     function handleClick(id: string) {
-        setActiveId(id);
+        setactiveId(id);
     }
 
     return (
