@@ -18,10 +18,22 @@ module.exports = {
 
     extend: {
       colors: {
+<<<<<<< HEAD
         darkBlue: "#090F21",
         darkGrey: "#1F2937",
         lightBlue: "#93C5FD",
         lightBlue2: "#F5F9FF",
+=======
+        DarkBlue : "#090F21",
+        lightGrey : "#6b7280",
+        lightBlue : "rgba(9, 15, 33, 0.1)",
+        Blue600: "#2563eb",
+        Blue300: "#93c5fd",
+        Blue100: "#dbeafe",
+        Blue50: "#F5F9FF",
+        Red: "#991B1B",
+        lightRed: "#FEF2F2",
+>>>>>>> 64640b1e5a3da474efd90466a5a4109863207ac6
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -87,5 +99,8 @@ module.exports = {
       lg: { min: "1007px" },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require('daisyui')
+  ],
 };
