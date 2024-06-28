@@ -58,14 +58,14 @@ export default function ChangeUserEmailDialog({userid,className,password,email}:
             body: JSON.stringify(values),
           })
           if (response.ok) {
-            toast.success(' your Successfully updating your password');
+            toast.success(' your Successfully updating your email');
             router.refresh(); // Refresh the page upon successful update
           }
         }else{
-          toast.error("your Password do not match your old Password");
+          toast.error("your Password do not match your old password");
         }
       }catch (_) {
-          toast.error("An error occurred while updating your password");
+          toast.error("An error occurred while updating your email");
       }finally{
         setLoading(false);
       }
