@@ -117,5 +117,7 @@ Check out our Next.js deployment documentation for more details.
 For any questions or suggestions, feel free to reach out:
 
 Email: imohammedhamed@example.com
+
 GitHub: imohammedhamed
+
 Enjoy your coffee with MCoffee!
