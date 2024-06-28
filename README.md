@@ -14,16 +14,6 @@ password : 123123
 ### Home Page
 ![Home Page](https://mohammed-h.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FLandingPage.005e6286.png&w=1920&q=100)
 
-## Table of Contents
-- [Features](#features)
-- [Technologies](#technologies)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [Getting Started](#getting-started)
-- [Learn More](#learn-more)
-- [Deploy on Vercel](#deploy-on-vercel)
-- [Contact](#contact)
 
 ## Features
 
@@ -104,3 +94,28 @@ yarn dev
 pnpm dev
 # or
 bun dev
+```
+Open http://localhost:3000 with your browser to see the result.
+
+You can start editing the page by modifying app/page.tsx. The page auto-updates as you edit the file.
+
+This project uses next/font to automatically optimize and load Inter, a custom Google Font.
+
+##Learn More
+To learn more about Next.js, take a look at the following resources:
+
+Next.js Documentation - learn about Next.js features and API.
+Learn Next.js - an interactive Next.js tutorial.
+You can check out the Next.js GitHub repository - your feedback and contributions are welcome!
+
+Deploy on Vercel
+The easiest way to deploy your Next.js app is to use the Vercel Platform from the creators of Next.js.
+
+Check out our Next.js deployment documentation for more details.
+
+##Contact
+For any questions or suggestions, feel free to reach out:
+
+Email: imohammedhamed@example.com
+GitHub: imohammedhamed
+Enjoy your coffee with MCoffee!
