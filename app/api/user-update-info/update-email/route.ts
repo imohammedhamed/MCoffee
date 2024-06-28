@@ -12,8 +12,9 @@ export async function PUT(req: Request) {
         const {email, userid,Enteredpassword} = userSchema.parse(body);
 
         // Check if the new username is already taken
-        const userNameExist = await prisma.user.findFirst({
+        const userNameExist = await prisma.user.findUnique({
             where: {
+                id:userid,
                 email:email
             }
         });

@@ -4,21 +4,22 @@ import { z } from "zod"
 const userSchema = z.object({
     userid:z.string(),
     Newpassword: z.string(),
-  })
+})
 export async function PUT(req: Request) {
     try {
         const body = await req.json();
         const {Newpassword, userid} = userSchema.parse(body);
 
         // Check if the new username is already taken
-        const userNameExist = await prisma.user.findFirst({
+        const userNameExist = await prisma.user.findUnique({
             where: {
+                id:userid,
                 password:Newpassword
             }
         });
 
         if (userNameExist) {
-            return NextResponse.json({ user: null, message: "The new password is already taken." }, { status: 409 });
+            return NextResponse.json({ user: null, message: "The new password is already Exist." }, { status: 409 });
         }
 
         // Update the user's full name

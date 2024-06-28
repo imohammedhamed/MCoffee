@@ -69,7 +69,7 @@ export default function ChangeUserPasswordDialog({userid,className,password}:Cha
           toast.error("your Password do not match your old Password");
         }
       }catch (_) {
-          toast.error("An error occurred while updating your password");
+          toast.error("The new password is already Exist.");
       }finally{
         setLoading(false);
       }
