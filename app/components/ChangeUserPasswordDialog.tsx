@@ -90,9 +90,9 @@ export default function ChangeUserPasswordDialog({userid,className,password}:Cha
                       name="Newpassword"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className=' text-DarkBlue font-bold'>Emter Your New password </FormLabel>
+                          <FormLabel className=' text-DarkBlue font-bold'>Enter Your New password </FormLabel>
                           <FormControl>
-                            <Input placeholder='Emter Your password...' {...field} />
+                            <Input placeholder='Enter Your password...' {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -116,7 +116,7 @@ export default function ChangeUserPasswordDialog({userid,className,password}:Cha
                       name="Enteredpassword"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className=' text-DarkBlue font-bold'>Emter Your Previous password </FormLabel>
+                          <FormLabel className=' text-DarkBlue font-bold'>Enter Your Previous password </FormLabel>
                           <FormControl>
                             <Input {...field} type='password' />
                           </FormControl>

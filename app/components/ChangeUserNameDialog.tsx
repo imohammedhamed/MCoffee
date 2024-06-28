@@ -87,7 +87,7 @@ export default function ChangeUserNameDialog({className,userid,password,fullName
                       name="username"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className=' text-DarkBlue font-bold'>Emter Your new Name </FormLabel>
+                          <FormLabel className=' text-DarkBlue font-bold'>Enter Your new Name </FormLabel>
                           <FormControl>
                             <Input placeholder={fullName} {...field} />
                           </FormControl>
@@ -100,7 +100,7 @@ export default function ChangeUserNameDialog({className,userid,password,fullName
                       name="Enteredpassword"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className=' text-DarkBlue font-bold'>Emter Your password </FormLabel>
+                          <FormLabel className=' text-DarkBlue font-bold'>Enter Your Previous password </FormLabel>
                           <FormControl>
                             <Input {...field} type='password' />
                           </FormControl>

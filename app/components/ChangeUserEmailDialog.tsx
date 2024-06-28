@@ -86,7 +86,7 @@ export default function ChangeUserEmailDialog({userid,className,password,email}:
                 name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className=' text-DarkBlue font-bold'>Emter Your New email </FormLabel>
+                    <FormLabel className=' text-DarkBlue font-bold'>Enter Your New email </FormLabel>
                     <FormControl>
                       <Input placeholder={email} {...field} />
                     </FormControl>
@@ -99,7 +99,7 @@ export default function ChangeUserEmailDialog({userid,className,password,email}:
                 name="Enteredpassword"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className=' text-DarkBlue font-bold'>Emter Your Previous password </FormLabel>
+                    <FormLabel className=' text-DarkBlue font-bold'>Enter Your Previous password </FormLabel>
                     <FormControl>
                       <Input {...field} type='password' />
                     </FormControl>
