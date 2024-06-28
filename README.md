@@ -11,8 +11,9 @@ and you can use this email and password
 email : nu@gmail.com  
 password : 123123  
 
-### Home Page
-![Home Page](https://mohammed-h.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FLandingPage.005e6286.png&w=1920&q=100)
+### Show Case
+![Home Page](imgs_showCase/For_GitHub_show_case.png)
+![Home Page](imgs_showCase/For_GitHub_show_case_two.png)
 
 
 ## Features
