@@ -17,9 +17,9 @@ export default function PreferenceCard({title,paraParagraph,PreferenceCardArr}:P
   }
   return (
     <div className=' bg-white  border border-solid bosrder-lightBlue p-5 rounded-lg w-full h-full min-h-[350px]'>
-      <div className='header | flex justify-between items-center w-full border-b pb-2 mb-5 border-Blue600 '>
-          <h3 className=' text-Blue600 text-2xl font-bold'>{title}</h3>
-          <p className=' text-gray-500 text-base font-bold'>{paraParagraph}</p>
+      <div className='header | flex justify-between items-end w-full border-b pb-2 mb-5 border-Blue600 '>
+          <h3 className=' text-Blue600 text-2xl sm:text-xl font-bold'>{title}</h3>
+          <p className=' text-gray-500 text-base sm:text-xs font-bold'>{paraParagraph}</p>
       </div>
       <div>
           {
