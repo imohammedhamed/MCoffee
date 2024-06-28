@@ -138,3 +138,16 @@ export const ChoiceOfMilk =[
         name:"No Milk"
     },
 ]
+
+export const UserInfoNavContent = [
+    {
+        id: "1",
+        name: "Account info",
+        path: "/",
+    },
+    {
+        id: "2",
+        name: "Your Orders",
+        path: "/",
+    }
+] as const;

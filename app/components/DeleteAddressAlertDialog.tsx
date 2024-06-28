@@ -1,6 +1,7 @@
 "use client"
 import React,{useState} from 'react';
 import { FaPen, FaTrashCan } from "react-icons/fa6";
+import { BiTrashAlt } from "react-icons/bi";
 import { Button } from '@/components/ui/button';
 import {
   AlertDialog,
@@ -49,7 +50,7 @@ export default function DeleteAddressAlertDialog({addressId }: DeleteAddressAler
   return (
     <AlertDialog>
         <AlertDialogTrigger asChild>
-            <Button variant="lightRed"><FaTrashCan className='size-5'/></Button>
+            <Button variant="lightRed" className='px-3'><BiTrashAlt className='size-6'/></Button>
         </AlertDialogTrigger>
         <AlertDialogContent className='bg-Blue100 rounded-lg max-w-[350px]'>
             <AlertDialogHeader>

@@ -73,7 +73,7 @@ export default function AddAddressCardDialog(Prop: AddAddressCardDialogProps) {
             } else {
                 toast.error("Failed to create address", await response.json());
             }
-        } catch (error) {
+        } catch (_) {
             toast.error("An error occurred while creating the address");
 
         }finally{
@@ -101,7 +101,7 @@ export default function AddAddressCardDialog(Prop: AddAddressCardDialogProps) {
                             name="area"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel className=' text-DarkBlue'>Area</FormLabel>
+                                    <FormLabel className=' text-DarkBlue font-bold'>Area</FormLabel>
                                     <FormControl>
                                         <Input placeholder="6Th of October..." {...field} />
                                     </FormControl>
@@ -114,7 +114,7 @@ export default function AddAddressCardDialog(Prop: AddAddressCardDialogProps) {
                             name="streetName"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel className=' text-DarkBlue'>Street Name</FormLabel>
+                                    <FormLabel className=' text-DarkBlue font-bold'>Street Name</FormLabel>
                                     <FormControl>
                                         <Input placeholder="First street, Second street..." {...field} />
                                     </FormControl>
@@ -127,7 +127,7 @@ export default function AddAddressCardDialog(Prop: AddAddressCardDialogProps) {
                             name="buildingType"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel className=' text-DarkBlue'>Building Type</FormLabel>
+                                    <FormLabel className=' text-DarkBlue font-bold'>Building Type</FormLabel>
                                     <FormControl>
                                         <Input placeholder="Apartment, House, Work..." {...field} />
                                     </FormControl>
@@ -140,7 +140,7 @@ export default function AddAddressCardDialog(Prop: AddAddressCardDialogProps) {
                             name="buildingNumber"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel className=' text-DarkBlue'>Building Number</FormLabel>
+                                    <FormLabel className=' text-DarkBlue font-bold'>Building Number</FormLabel>
                                     <FormControl>
                                         <Input placeholder="85, your building number..." {...field} />
                                     </FormControl>
@@ -153,7 +153,7 @@ export default function AddAddressCardDialog(Prop: AddAddressCardDialogProps) {
                             name="floorNumber"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel className=' text-DarkBlue'>Floor Number</FormLabel>
+                                    <FormLabel className=' text-DarkBlue font-bold'>Floor Number</FormLabel>
                                     <FormControl>
                                         <Input placeholder="2, 3, 4, 5 or second floor..." {...field} />
                                     </FormControl>
@@ -166,7 +166,7 @@ export default function AddAddressCardDialog(Prop: AddAddressCardDialogProps) {
                             name="apartmentNumber"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel className=' text-DarkBlue'>Apartment Number</FormLabel>
+                                    <FormLabel className=' text-DarkBlue font-bold'>Apartment Number</FormLabel>
                                     <FormControl>
                                         <Input placeholder="22, your apartment number..." {...field} />
                                     </FormControl>
@@ -179,7 +179,7 @@ export default function AddAddressCardDialog(Prop: AddAddressCardDialogProps) {
                             name="mobileNumber"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel className=' text-DarkBlue'>Mobile Number</FormLabel>
+                                    <FormLabel className=' text-DarkBlue font-bold'>Mobile Number</FormLabel>
                                     <FormControl>
                                         <Input placeholder="(20+) delivery is only within Egypt..." {...field} />
                                     </FormControl>
