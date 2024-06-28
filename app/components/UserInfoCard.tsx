@@ -10,6 +10,7 @@ import AddAddressCardDialog from './AddAddressCardDialog';
 import AddressCard from './AddressCard'
 import ChangeUserNameDialog from './ChangeUserNameDialog';
 import ChangeUserPasswordDialog from './ChangeUserPasswordDialog';
+import ChangeUserEmailDialog from './ChangeUserEmailDialog';
 interface Address{
   id              :String,
   area            :String,
@@ -42,8 +43,8 @@ export default function UserInfoCard({userid,email,password,fullName,phone,pictu
           </div>
           <div className=' grid grid-cols-1 gap-3 lg:grid-cols-3 lg:gap-5 py-20'>
             <div className=" relative grid w-full max-w-sm items-center gap-1.5">
-                <Label htmlFor="email" className=' text-DarkBlue text-lg font-medium'>your Name</Label>
-                <Input type="email" id="email" className=' p-6 border border-solid border-lightBlue' placeholder={`${fullName}`} disabled/>
+                <Label htmlFor="fullName" className=' text-DarkBlue text-lg font-medium'>your Name</Label>
+                <Input id="fullName" className=' p-6 border border-solid border-lightBlue' placeholder={`${fullName}`} disabled/>
                 <ChangeUserNameDialog className=' absolute top-[3.7rem] -translate-y-1/2 right-3'
                   userid  ={userid}
                   password ={password}
@@ -51,8 +52,17 @@ export default function UserInfoCard({userid,email,password,fullName,phone,pictu
                 />
             </div>
             <div className=" relative grid w-full max-w-sm items-center gap-1.5">
+                <Label htmlFor="email" className=' text-DarkBlue text-lg font-medium'>your email</Label>
+                <Input id="email" className=' p-6 border border-solid border-lightBlue' placeholder={`${email}`} disabled/>
+                <ChangeUserEmailDialog className=' absolute top-[3.7rem] -translate-y-1/2 right-3'
+                  userid  ={userid}
+                  password ={password}
+                  email ={email}
+                />
+            </div>
+            <div className=" relative grid w-full max-w-sm items-center gap-1.5">
                 <Label htmlFor="password" className=' text-DarkBlue text-lg font-medium'>your password</Label>
-                <Input type="text" id="password" className=' p-6 border border-solid border-lightBlue' placeholder={`${password}`} disabled/>
+                <Input id="password" className=' p-6 border border-solid border-lightBlue' placeholder={`${password}`} disabled/>
                 <ChangeUserPasswordDialog className=' absolute top-[3.7rem] -translate-y-1/2 right-3'
                   userid  ={userid}
                   password ={password}
