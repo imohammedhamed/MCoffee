@@ -101,7 +101,7 @@ You can start editing the page by modifying app/page.tsx. The page auto-updates 
 
 This project uses next/font to automatically optimize and load Inter, a custom Google Font.
 
-##Learn More
+## Learn More
 To learn more about Next.js, take a look at the following resources:
 
 Next.js Documentation - learn about Next.js features and API.
@@ -113,7 +113,7 @@ The easiest way to deploy your Next.js app is to use the Vercel Platform from th
 
 Check out our Next.js deployment documentation for more details.
 
-##Contact
+## Contact
 For any questions or suggestions, feel free to reach out:
 
 Email: imohammedhamed@example.com
