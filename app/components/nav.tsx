@@ -51,10 +51,10 @@ const Navbar = async () => {
                   <FaAngleDown className=" size-5 text-Blue600"/>
                   </span>
               </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56 p-2 rounded-xl drop-shadow-2xl">
+      <DropdownMenuContent className="w-56 p-3 rounded-xl drop-shadow-2xl">
           <DropdownMenuItem className="py-3">
             <FaRegCircleUser className=" size-5 text-Blue600 mr-2"/>
-            <Link href={`${session?.user.id}`} className=" font-semibold">Account Info</Link>
+            <Link href={`/${session?.user.id}`} className=" font-semibold">Account Info</Link>
           </DropdownMenuItem>
           <DropdownMenuItem className="py-3">
             <FaCartShopping  className=" size-5 text-Blue600 mr-2"/>
