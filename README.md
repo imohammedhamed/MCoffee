@@ -1,6 +1,7 @@
 # MCoffee
 
 Welcome to MCoffee, 
+
 MCoffee is a user-friendly web application designed for coffee lovers. Users can browse through the menu and search for their favorite coffee beverages from the comfort of their home or on the go.
 
 ## Visit
