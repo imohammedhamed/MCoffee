@@ -77,7 +77,7 @@ export default function ChangeUserEmailDialog({userid,className,password,email}:
     </DialogTrigger>
 <DialogContent className="max-w-[350px] lg:max-w-[450px] bg-Blue100 rounded-lg">
     <DialogHeader className='pb-7'>
-      <DialogTitle className=' text-DarkBlue'>Change Your Name</DialogTitle>
+      <DialogTitle className=' text-DarkBlue'>Change Your Email</DialogTitle>
     </DialogHeader>
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
