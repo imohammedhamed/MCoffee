@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Image from 'next/image'
 import loginImgSrc from '@/public/illustration5.svg'
 import Link from 'next/link'
@@ -22,8 +22,7 @@ import { useRouter } from 'next/navigation'
 import { toast } from 'react-hot-toast';
 export default function Login() {
   const router = useRouter()
-  const [loading, setLoading] = useState(false);
-
+  const loading = useRef(false);
   const formSchema = z.object({
     email: z.string().email({ message: "Invalid email address" }),
     password: z.string().min(6, { message: "Password must be at least 6 characters long" }),
@@ -38,7 +37,7 @@ export default function Login() {
   })
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    setLoading(true);
+    loading.current=true
     const loginData = await signIn('credentials', {
       redirect: false,
       email: values.email,
@@ -52,7 +51,7 @@ export default function Login() {
     } else {
       toast.error('!!Useremail or password is incorrect')
     }
-    setLoading(false);
+    loading.current=false
   }
 
   return (
@@ -92,7 +91,7 @@ export default function Login() {
                 )}
               />
               <br />
-              <Button type="submit" disabled={loading} className='w-full'>{loading ? <span className="loading loading-dots loading-sm"></span> :`Submit`}</Button>
+              <Button type="submit" disabled={loading.current} className='w-full'>{loading.current ? <span className="loading loading-dots loading-sm"></span> :`Submit`}</Button>
               <p className='text-sm text-DarkBlue p-2'>
                 IF YOU {`DON'T`} HAVE AN ACCOUNT ? <Link href='/signup' className='font-semibold text-Blue600 hover:underline'>SIGN UP</Link>
               </p>

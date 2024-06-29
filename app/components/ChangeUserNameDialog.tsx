@@ -1,5 +1,5 @@
 "use client"
-import React,{useState} from 'react'
+import React,{useRef, useState} from 'react'
 import { Button } from '@/components/ui/button'
 import { FaPen } from "react-icons/fa6";
 import { useRouter } from 'next/navigation';
@@ -35,7 +35,7 @@ interface ChangeUserInfoBtnProps{
 
 export default function ChangeUserNameDialog({className,userid,password,fullName}:ChangeUserInfoBtnProps) {
   const router = useRouter()
-  const [loading, setLoading] = useState(false);
+  const loading = useRef(false);
   const formSchema = z.object({
     userid:z.string(),
     username: z.string().min(1, { message: "Full name is required" }),
@@ -51,7 +51,7 @@ export default function ChangeUserNameDialog({className,userid,password,fullName
   })
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try { 
-      setLoading(true);
+      loading.current=true
       if(values.Enteredpassword===password){
         const response = await fetch('/api/user-update-info/update-name',{
           method: 'PUT',
@@ -68,7 +68,7 @@ export default function ChangeUserNameDialog({className,userid,password,fullName
     }catch (_) {
         toast.error("An error occurred while updating your Name");
     }finally{
-      setLoading(false);
+      loading.current=false;
     }
   }
   return (
@@ -108,7 +108,7 @@ export default function ChangeUserNameDialog({className,userid,password,fullName
                         </FormItem>
                       )}
                     />
-                    <Button variant="ghostLightBlue" disabled={loading} type="submit" className=' w-full'>{loading?<span className="loading loading-dots loading-sm"></span> :`Save changes`}</Button>
+                    <Button variant="ghostLightBlue" disabled={loading.current} type="submit" className=' w-full'>{loading.current?<span className="loading loading-dots loading-sm"></span> :`Save changes`}</Button>
                   </form>
             </Form>
       </DialogContent>

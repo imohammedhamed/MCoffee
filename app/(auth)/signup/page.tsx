@@ -1,5 +1,5 @@
 "use client"
-import React,{useState} from 'react'
+import React,{useRef, useState} from 'react'
 import Image from 'next/image'
 import loginImgSrc from '@/public/illustration4.svg'
 import Link from 'next/link'
@@ -33,7 +33,7 @@ const formSchema = z.object({
 
 export default function Signup() {
   const router = useRouter()
-  const [loading, setLoading] = useState(false);
+  const loading = useRef(false);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -46,7 +46,7 @@ export default function Signup() {
   })
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    setLoading(true)
+    loading.current=true
     const response = await fetch('/api/users', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -66,7 +66,7 @@ export default function Signup() {
     } else {
       toast.error('This account already exists try to login ')
     }
-    setLoading(false)
+    loading.current=false
   }
 
   return (
@@ -146,7 +146,7 @@ export default function Signup() {
                 )}
               />
               <br />
-              <Button type="submit" disabled={loading} className='w-full'>{loading? <span className="loading loading-dots loading-sm"></span> :`Submit`}</Button>
+              <Button type="submit" disabled={loading.current} className='w-full'>{loading.current? <span className="loading loading-dots loading-sm"></span> :`Submit`}</Button>
               <p className='text-sm text-DarkBlue p-2'>
                 IF YOU HAVE AN ACCOUNT? <Link href='/login' className='font-semibold text-Blue600 hover:underline'>LOG IN</Link>
               </p>

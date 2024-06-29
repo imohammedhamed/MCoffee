@@ -1,5 +1,5 @@
 "use client"
-import React,{useState} from 'react'
+import React,{useRef, useState} from 'react'
 import { Button } from '@/components/ui/button'
 import { FaPen } from "react-icons/fa6";
 import { useRouter } from 'next/navigation';
@@ -34,7 +34,7 @@ interface ChangeUserEmailDialogProps{
 
 export default function ChangeUserEmailDialog({userid,className,password,email}:ChangeUserEmailDialogProps) {
     const router = useRouter()
-    const [loading, setLoading] = useState(false);
+    const loading = useRef(false);
     const formSchema = z.object({
       userid:z.string(),
       email:z.string().email({ message: "Invalid email address" }),
@@ -50,7 +50,7 @@ export default function ChangeUserEmailDialog({userid,className,password,email}:
     })
     async function onSubmit(values: z.infer<typeof formSchema>) {
       try { 
-        setLoading(true);
+        loading.current=true
         if(values.Enteredpassword===password){
           const response = await fetch('/api/user-update-info/update-email',{
             method: 'PUT',
@@ -67,7 +67,7 @@ export default function ChangeUserEmailDialog({userid,className,password,email}:
       }catch (_) {
           toast.error("An error occurred while updating your email");
       }finally{
-        setLoading(false);
+        loading.current=false
       }
     }
   return (
@@ -107,7 +107,7 @@ export default function ChangeUserEmailDialog({userid,className,password,email}:
                   </FormItem>
                 )}
               />
-              <Button variant="ghostLightBlue" disabled={loading} type="submit" className=' w-full'>{loading?<span className="loading loading-dots loading-sm"></span> :`Save changes`}</Button>
+              <Button variant="ghostLightBlue" disabled={loading.current} type="submit" className=' w-full'>{loading.current?<span className="loading loading-dots loading-sm"></span> :`Save changes`}</Button>
             </form>
       </Form>
 </DialogContent>
