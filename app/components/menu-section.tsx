@@ -41,8 +41,8 @@ export default async function MenuSection({categoryId}:MenuSectionProps) {
     <div className=' container mx-auto'>
       <SectionHeading> Menu </SectionHeading>
       <div className=' flex justify-between items-center px-5 md:flex-col sm:flex-col'>
-        <SearchBar/>
-      <div className=' sm:mt-5 md:mt-5 flex justify-cente items-center flex-row-reverse p-2  bg-white border border-solid bosrder bosrder-lightBlue rounded-lg'>
+        <SearchBar />
+      <div className=' sm:mt-5 md:mt-5 flex justify-cente items-center flex-row-reverse px-2 py-1  bg-white border border-solid bosrder bosrder-lightBlue rounded-lg'>
       {categories.map(category =>{
         return(
           <CategoryNav
