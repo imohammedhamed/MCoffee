@@ -7,7 +7,7 @@ export default function SectionHeading({
     }>):React.JSX.Element {
     return (
         <div className="flex flex-col justify-center items-center pb-16 pt-32">
-            <h1 className="text-6xl font-normal text-lightGrey opacity-50 text-center">{children}</h1>
+            <h1 className="text-6xl font-normal text-lightGrey opacity-50">{children}</h1>
         </div>
     )
 }

@@ -21,7 +21,7 @@ export default function MenuContent({title,picture,price,categoryId,id}:MenuCont
   return (
     <>
     <div className=' p-5 flex justify-center items-center'>
-      <div className=' bg-white text-DarkBlue border border-solid border-lightBlue p-5 rounded-lg flex justify-between items-center flex-col w-full h-full min-h-[350px]'>
+      <div className=' bg-white text-DarkBlue border border-solid bosrder-lightBlue p-5 rounded-lg flex justify-between items-center flex-col w-full h-full min-h-[350px]'>
         <div className = 'p-2'>
             <Image src={picture} className="rounded-lg" alt="product img" title="Project img"  width={250} height={250}/>
             </div>
