@@ -11,7 +11,6 @@ import AddressCard from './AddressCard'
 import ChangeUserNameDialog from './ChangeUserNameDialog';
 import ChangeUserPasswordDialog from './ChangeUserPasswordDialog';
 import ChangeUserEmailDialog from './ChangeUserEmailDialog';
-import ChangeUserPictureDialog from './ChangeUserPictureDialog';
 interface Address{
   id              :String,
   area            :String,
@@ -41,7 +40,6 @@ export default function UserInfoCard({userid,email,password,fullName,phone,pictu
             <AvatarImage src={`${picture}`} alt={`${fullName} Picture `} />
             <AvatarFallback>{fullName}</AvatarFallback>
           </Avatar>
-          <ChangeUserPictureDialog userid={userid}/>
           </div>
           <div className=' grid grid-cols-1 gap-3 lg:grid-cols-3 lg:gap-5 py-20'>
             <div className=" relative grid w-full max-w-sm items-center gap-1.5">
