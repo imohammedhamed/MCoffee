@@ -11,6 +11,7 @@ import AddressCard from './AddressCard'
 import ChangeUserNameDialog from './ChangeUserNameDialog';
 import ChangeUserPasswordDialog from './ChangeUserPasswordDialog';
 import ChangeUserEmailDialog from './ChangeUserEmailDialog';
+import ChangeUserPictureDialog from './ChangeUserPictureDialog';
 interface Address{
   id              :String,
   area            :String,
@@ -35,11 +36,12 @@ export default function UserInfoCard({userid,email,password,fullName,phone,pictu
   return (
     <div className=' lg:container lg:mx-auto'>
         <div className=' bg-Blue100 w-full p-5 lg:p-10 my-5 rounded-lg'>
-          <div className=' flex justify-center items-center w-full'>
+          <div className=' flex flex-col gap-2 justify-center items-center w-full'>
           <Avatar className=' size-20'>
             <AvatarImage src={`${picture}`} alt={`${fullName} Picture `} />
             <AvatarFallback>{fullName}</AvatarFallback>
           </Avatar>
+          <ChangeUserPictureDialog userid={userid}/>
           </div>
           <div className=' grid grid-cols-1 gap-3 lg:grid-cols-3 lg:gap-5 py-20'>
             <div className=" relative grid w-full max-w-sm items-center gap-1.5">
