@@ -12,13 +12,13 @@ export default async function UserAccountBtn({className}:{className?:string}) {
   return (
     <div className={ cn('flex justify-between items-center gap-5',className)}>
     <Link href={`/${session?.user.id}`} className='p-2 flex flex-col justify-between items-center relative sm:w-full hover:opacity-50'>
-        <h1 className=' text-DarkBlue text-base sm:text-sm '>My Account</h1>
+        <h1 className=' text-DarkBlue text-base sm:text-sm font-bold '>My Account</h1>
         <p className=' text-lightGrey text-xs font-semibold overflow-hidden '>! {session?.user.name}</p>
         <FaCircle className='absolute top-2 -left-2 sm:-left-1 text-[9px] text-Blue600'/>
     </Link>
         <Button className=' flex justify-center items-center gap-3 sm:w-full sm:hidden md:hidden'>
             <FaCartShopping/>
-            <Link href='/'>Cart</Link>
+            <Link href='/Cart'>Cart</Link>
         </Button>
     </div>
   )

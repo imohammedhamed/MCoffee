@@ -35,7 +35,7 @@ export default function UserInfoCard({userid,email,password,fullName,phone,pictu
   return (
     <div className=' lg:container lg:mx-auto'>
         <div className=' bg-Blue100 w-full p-5 lg:p-10 my-5 rounded-lg'>
-          <div className=' flex justify-center items-center w-full'>
+          <div className=' flex flex-col gap-2 justify-center items-center w-full'>
           <Avatar className=' size-20'>
             <AvatarImage src={`${picture}`} alt={`${fullName} Picture `} />
             <AvatarFallback>{fullName}</AvatarFallback>

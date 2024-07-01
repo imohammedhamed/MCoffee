@@ -33,7 +33,7 @@ const Navbar = async () => {
     <nav className="bg-white px-0 py-1 border lg:px-32">
       <div className="container mx-auto flex justify-between items-center">
       <div className="flex items-center">
-        <div className=" flex justify-center items-center gap-1">
+        <div className=" flex justify-center items-center gap-2">
         <span>
           <Link href="/">
             <Image
@@ -58,7 +58,7 @@ const Navbar = async () => {
           </DropdownMenuItem>
           <DropdownMenuItem className="py-3">
             <FaCartShopping  className=" size-5 text-Blue600 mr-2"/>
-            <Link href="/" className=" font-semibold">Cart</Link>
+            <Link href="/Cart" className=" font-semibold">Cart</Link>
           </DropdownMenuItem>
       </DropdownMenuContent>
       </DropdownMenu>

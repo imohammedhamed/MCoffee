@@ -58,7 +58,10 @@ model item {
   price       Float
   categoryId  String       @db.ObjectId
   category    category     @relation(fields: [categoryId], references: [id])
-  preferences preference[]
+  preference  preference?  @relation("ItemPreference")
+  preferenceId String?     @db.ObjectId
+  orderId     String?      @db.ObjectId
+  order       order?       @relation(fields: [orderId], references: [id])
 }
 
 // Preference model
@@ -68,15 +71,15 @@ model preference {
   coffeeType String
   extraShot  String?
   milkType   String
-  itemId     String  @db.ObjectId
-  item       item    @relation(fields: [itemId], references: [id])
+  itemId     String  @unique @db.ObjectId
+  item       item    @relation("ItemPreference", fields: [itemId], references: [id])
 }
 
 // Order model
 model order {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
   userId    String   @db.ObjectId
-  items     Json
+  items     item[]
   createdAt DateTime @default(now()) @map("created_at")
   user      user     @relation(fields: [userId], references: [id])
 }
