@@ -16,9 +16,11 @@ export default async function UserAccountBtn({className}:{className?:string}) {
         <p className=' text-lightGrey text-xs font-semibold overflow-hidden '>! {session?.user.name}</p>
         <FaCircle className='absolute top-2 -left-2 sm:-left-1 text-[9px] text-Blue600'/>
     </Link>
-        <Button className=' flex justify-center items-center gap-3 sm:w-full sm:hidden md:hidden'>
+        <Button className='sm:hidden md:hidden'>
+            <Link href='/Cart' className='flex justify-center items-center gap-3'>
             <FaCartShopping/>
-            <Link href='/Cart'>Cart</Link>
+            Cart
+            </Link>
         </Button>
     </div>
   )

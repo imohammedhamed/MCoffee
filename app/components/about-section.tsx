@@ -5,13 +5,10 @@ import CFShop from '@/public/illustration6.svg'
 export default function AboutSection() {
     return (
         <>
-            <section id='about' className='container mx-auto'>
             <SectionHeading> About Us </SectionHeading>
-            <div className=" text-DarkBlue flex justify-between items-center gap-5 lg:gap-24 sm:flex-col">
-                    <div className='FANCY-BORDER-RADIUS | bg-gradient-to-t from-Blue300/50 to-Blue50 p-5'>
-                        <Image src={CFShop} alt='about img' width={600} height={100}/>
-                    </div>
-                <p className=' text-2xl sm:text-center'>
+            <section id='about'>
+            <div className=" bg-DarkBlue flex justify-between items-center gap-5 lg:gap-24 sm:flex-col">
+                <p className=' p-10 container mx-auto text-Blue50 text-xl text-center'>
                 {`We've 10 year's experience of crafting the finest quality coffee.`} <br /> <br />
                 {`From revolutionary methods and commitment 
                 to quality to unforgettable successes 
