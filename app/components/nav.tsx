@@ -100,9 +100,9 @@ const Navbar = async () => {
         </span>
         { 
           userHere?(
-          <Button variant="outline" className="border border-Blue600 sm:hidden flex justify-between items-center gap-2">
+          <Button variant="outline" className="border border-Blue600 sm:hidden">
+          <Link href="/login" className="text-Blue600 text-sm font-extrabold flex justify-between items-center gap-2">
           <FaRegCircleUser  className=" text-Blue600 text-lg"/>
-          <Link href="/login" className="text-Blue600 text-sm font-extrabold">
             Log In
           </Link>
           </Button>
