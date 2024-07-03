@@ -62,6 +62,7 @@ model item {
   preferenceId String?     @db.ObjectId
   orderId     String?      @db.ObjectId
   order       order?       @relation(fields: [orderId], references: [id])
+  @@index(title)
 }
 
 // Preference model
