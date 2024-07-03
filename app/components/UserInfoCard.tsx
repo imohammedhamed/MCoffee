@@ -11,6 +11,7 @@ import AddressCard from './AddressCard'
 import ChangeUserNameDialog from './ChangeUserNameDialog';
 import ChangeUserPasswordDialog from './ChangeUserPasswordDialog';
 import ChangeUserEmailDialog from './ChangeUserEmailDialog';
+import NoAddressesFound from './NoAddressesFound';
 interface Address{
   id              :String,
   area            :String,
@@ -72,13 +73,14 @@ export default function UserInfoCard({userid,email,password,fullName,phone,pictu
           <div className=' flex flex-col justify-center items-center'>
           <div className='addressList header | flex justify-between items-center w-full py-5'>
             <h2 className=' text-2xl font-semibold text-DarkBlue'>Addresses List</h2>
-          <AddAddressCardDialog userid={userid} />
+            <AddAddressCardDialog userid={userid} />
           </div>
           {
             address?.length ? (address.map((addre: {id:string;area: String; streetName: String; buildingType: String; buildingNumber: String; floorNumber: String; apartmentNumber: String; mobileNumber: String }) => {
               return(
                 <AddressCard
                 key={userid}
+                userId ={userid}
                 id={addre.id}
                 area={addre.area}
                 streetName={addre.streetName}
@@ -90,7 +92,7 @@ export default function UserInfoCard({userid,email,password,fullName,phone,pictu
                 />
               )
             })) :(
-              <p>No addresses found</p>
+              <NoAddressesFound userid={userid}/>
             )
           }
           </div>
