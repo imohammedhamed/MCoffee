@@ -57,21 +57,21 @@ export default function Login() {
   return (
     <>
       <div className='flex flex-row justify-between items-center'>
-        <div className='lg:w-1/3  container min-h-screen lg:px-28 lg:pb-10 pt-24'>
-          <h2 className='text-6xl font-bold text-DarkBlue py-10'>
+        <div className='lg:w-1/4 container min-h-screen flex flex-col justify-center items-center'>
+          <h2 className='lg:text-6xl md:text-6xl sm:text-5xl text-start  lg:w-[500px] md:w-[500px] sm:w-full  font-bold text-DarkBlue lg:py-16 md:py-16 sm:py-5'>
             <span className='text-Blue600'>L</span>og In
           </h2>
 
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2 lg:w-[500px] md:w-[500px] sm:w-full">
               <FormField
                 control={form.control}
                 name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Email</FormLabel>
+                    <FormLabel className=' text-DarkBlue font-bold'>Email</FormLabel>
                     <FormControl>
-                      <Input className='text-DarkBlue' placeholder="Enter your email" type='email' {...field} />
+                      <Input  className='text-DarkBlue w-full' placeholder="Enter your email" type='email' {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -82,9 +82,9 @@ export default function Login() {
                 name="password"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Password</FormLabel>
+                    <FormLabel className=' text-DarkBlue font-bold'>Password</FormLabel>
                     <FormControl>
-                      <Input className='text-DarkBlue' placeholder="Enter your password" type='password' {...field} />
+                      <Input  className='text-DarkBlue w-full' placeholder="Enter your password" type='password' {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -104,10 +104,10 @@ export default function Login() {
           </div>
         </div>
       </div>
-      <div className='absolute top-10 lg:left-24 left-10 flex justify-center items-center gap-2 text-Blue600 hover:gap-3 transition-all '>
+      <Link href='/' className='absolute top-10 lg:left-24 left-7 flex justify-center items-center gap-2 text-Blue600 hover:ml-2 p-2 rounded-xl cursor-pointer transition-all '>
         <FaArrowLeft />
-        <Link href='/'>Go back</Link>
-      </div>
+          Go back
+        </Link>
       <p className="absolute bottom-0 right-5 py-2 text-DarkBlue font-semibold text-xs">Copyright© 2023-2024 @ MCoffee</p>
     </>
   )
