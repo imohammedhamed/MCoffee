@@ -61,7 +61,7 @@ export default function Signup() {
 
     if (response.ok) {
       toast.success('sign Up  Successfully');
-      router.push('/login')
+      router.push('/Welcome')
       router.refresh()
     } else {
       toast.error('This account already exists try to login ')
