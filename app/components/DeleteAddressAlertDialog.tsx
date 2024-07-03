@@ -26,7 +26,7 @@ export default function DeleteAddressAlertDialog({addressId }: DeleteAddressAler
 
   async function handleDelete() {
       try {
-        setLoading(false)
+        setLoading(true)
         const response = await fetch('/api/delete-address', {
             method: 'DELETE',
             headers: { 'Content-Type': 'application/json' },
@@ -42,7 +42,7 @@ export default function DeleteAddressAlertDialog({addressId }: DeleteAddressAler
     } catch (error) {
         toast.error("An error occurred while deleting the address");
     }finally{
-        setLoading(true)
+        setLoading(false)
 
     }
   }
@@ -61,7 +61,7 @@ export default function DeleteAddressAlertDialog({addressId }: DeleteAddressAler
             </AlertDialogHeader>
             <AlertDialogFooter className='flex flex-row justify-center items-center gap-2'>
                 <AlertDialogCancel className='bg-transparent border border-solid border-Blue600 text-Blue600 font-bold'>No</AlertDialogCancel>
-                <Button variant="lightRed" className=' font-bold lg:mt-2' disabled={loading} onClick={handleDelete}>{loading?<span className="loading loading-dots loading-sm"></span> :`Yes`}</Button>
+                <Button variant="lightRed" className=' font-bold lg:mt-2' disabled={loading} onClick={handleDelete}>{loading?<span className="loading loading-spinner loading-sm"></span> :`Yes`}</Button>
             </AlertDialogFooter>
         </AlertDialogContent>
     </AlertDialog>

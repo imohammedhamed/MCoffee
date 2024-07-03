@@ -1,5 +1,5 @@
 "use client";
-import React, { Dispatch, SetStateAction } from 'react';
+import React, { Dispatch, SetStateAction,useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { signOut } from "next-auth/react"
@@ -16,8 +16,14 @@ import {
 import {UserInfoNavContent} from '@/lib/data'
 
 export default function UserInfoNav({activeId,setactiveId}:{activeId:string,setactiveId:Dispatch<SetStateAction<string>>}) {
+    const [loading,setLoading] = useState(false)
     function handleClick(id: string) {
         setactiveId(id);
+    }
+   async function handleSignout(){
+        setLoading(true)
+        await signOut({ callbackUrl: '/' })
+        setLoading(false)
     }
 
     return (
@@ -48,7 +54,7 @@ export default function UserInfoNav({activeId,setactiveId}:{activeId:string,seta
                     </AlertDialogHeader>
                     <AlertDialogFooter className=' flex flex-row justify-center items-center gap-2'>
                         <AlertDialogCancel className='bg-transparent border border-solid border-Blue600 text-Blue600 font-bold'>No</AlertDialogCancel>
-                        <Button variant="lightRed" className=' font-bold lg:mt-2' onClick={()=>{signOut({ callbackUrl: '/' })}}>Yes</Button>
+                        <Button variant="lightRed" className=' font-bold lg:mt-2' disabled={loading} onClick={handleSignout}>{loading?<span className="loading loading-spinner loading-sm"></span> :`Yes`}</Button>
                     </AlertDialogFooter>
                     </AlertDialogContent>
                 </AlertDialog>

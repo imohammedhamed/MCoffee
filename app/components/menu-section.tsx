@@ -27,7 +27,11 @@ export default async function MenuSection({categoryId}:MenuSectionProps) {
 
   async function getCategory(){
     try {
-      const categories = await prisma.category.findMany();
+      const categories = await prisma.category.findMany({
+        orderBy:{
+          name:"desc"
+        }
+      });
       return categories; // select * from category
     } catch (error) {
       console.error("Error fetching categories:", error);
