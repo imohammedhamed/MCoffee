@@ -36,13 +36,23 @@ interface EditAddressAlertDialogProps {
   mobileNumber: string;
 }
 
-export default function EditAddressAlertDialog({userId,id,area,streetName,buildingType,buildingNumber,floorNumber,apartmentNumber,mobileNumber,}: EditAddressAlertDialogProps) {
+export default function EditAddressAlertDialog({
+  userId,
+  id,
+  area,
+  streetName,
+  buildingType,
+  buildingNumber,
+  floorNumber,
+  apartmentNumber,
+  mobileNumber,
+}: EditAddressAlertDialogProps) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
 
   const AddressSchema = z.object({
     userId: z.string(),
-    id:z.string(),
+    id: z.string(),
     area: z.string().min(1, "Area is required"),
     streetName: z.string().min(1, "Street name is required"),
     buildingType: z.string().min(1, "Building type is required"),
@@ -56,7 +66,7 @@ export default function EditAddressAlertDialog({userId,id,area,streetName,buildi
     resolver: zodResolver(AddressSchema),
     defaultValues: {
       userId: userId,
-      id:id,
+      id: id,
       area: area,
       streetName: streetName,
       buildingType: buildingType,
@@ -70,18 +80,31 @@ export default function EditAddressAlertDialog({userId,id,area,streetName,buildi
   async function onSubmit(values: z.infer<typeof AddressSchema>) {
     try {
       setLoading(true);
-      const response = await fetch("/api/update-address", {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
-      });
+      const hasChanges =
+        values.area !== area ||
+        values.streetName !== streetName ||
+        values.buildingType !== buildingType ||
+        values.buildingNumber !== buildingNumber ||
+        values.floorNumber !== floorNumber ||
+        values.apartmentNumber !== apartmentNumber ||
+        values.mobileNumber !== mobileNumber;
 
-      if (response.ok) {
-        toast.success("Successfully updated your address");
-        router.refresh();
+      if (hasChanges) {
+        const response = await fetch("/api/update-address", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(values),
+        });
+
+        if (response.ok) {
+          toast.success("Successfully updated your address");
+          router.refresh();
+        } else {
+          const errorResponse = await response.json();
+          toast.error("Failed to update address", errorResponse);
+        }
       } else {
-        const errorResponse = await response.json();
-        toast.error("Failed to update address", errorResponse);
+        toast.error("No changes detected");
       }
     } catch (_) {
       toast.error("An error occurred while updating your address");
@@ -110,7 +133,7 @@ export default function EditAddressAlertDialog({userId,id,area,streetName,buildi
                 <FormItem>
                   <FormLabel className="text-DarkBlue font-bold">Area</FormLabel>
                   <FormControl>
-                    <Input className=" text-DarkBlue" {...field} />
+                    <Input className="text-DarkBlue" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -123,7 +146,7 @@ export default function EditAddressAlertDialog({userId,id,area,streetName,buildi
                 <FormItem>
                   <FormLabel className="text-DarkBlue font-bold">Street Name</FormLabel>
                   <FormControl>
-                    <Input className=" text-DarkBlue" {...field} />
+                    <Input className="text-DarkBlue" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -136,7 +159,7 @@ export default function EditAddressAlertDialog({userId,id,area,streetName,buildi
                 <FormItem>
                   <FormLabel className="text-DarkBlue font-bold">Building Type</FormLabel>
                   <FormControl>
-                    <Input className=" text-DarkBlue" {...field} />
+                    <Input className="text-DarkBlue" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -149,7 +172,7 @@ export default function EditAddressAlertDialog({userId,id,area,streetName,buildi
                 <FormItem>
                   <FormLabel className="text-DarkBlue font-bold">Building Number</FormLabel>
                   <FormControl>
-                    <Input className=" text-DarkBlue" {...field} />
+                    <Input className="text-DarkBlue" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -162,7 +185,7 @@ export default function EditAddressAlertDialog({userId,id,area,streetName,buildi
                 <FormItem>
                   <FormLabel className="text-DarkBlue font-bold">Floor Number</FormLabel>
                   <FormControl>
-                    <Input className=" text-DarkBlue" {...field} />
+                    <Input className="text-DarkBlue" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -175,7 +198,7 @@ export default function EditAddressAlertDialog({userId,id,area,streetName,buildi
                 <FormItem>
                   <FormLabel className="text-DarkBlue font-bold">Apartment Number</FormLabel>
                   <FormControl>
-                    <Input className=" text-DarkBlue" {...field} />
+                    <Input className="text-DarkBlue" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -188,7 +211,7 @@ export default function EditAddressAlertDialog({userId,id,area,streetName,buildi
                 <FormItem>
                   <FormLabel className="text-DarkBlue font-bold">Mobile Number</FormLabel>
                   <FormControl>
-                    <Input className=" text-DarkBlue" {...field} />
+                    <Input className="text-DarkBlue" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
