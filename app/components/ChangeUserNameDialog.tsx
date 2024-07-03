@@ -89,7 +89,7 @@ export default function ChangeUserNameDialog({className,userid,password,fullName
                         <FormItem>
                           <FormLabel className=' text-DarkBlue font-bold'>Enter Your new Name </FormLabel>
                           <FormControl>
-                            <Input placeholder={fullName} {...field} />
+                            <Input className=' text-DarkBlue' placeholder={fullName} {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -102,7 +102,7 @@ export default function ChangeUserNameDialog({className,userid,password,fullName
                         <FormItem>
                           <FormLabel className=' text-DarkBlue font-bold'>Enter Your Previous password </FormLabel>
                           <FormControl>
-                            <Input {...field} type='password' />
+                            <Input className=' text-DarkBlue' {...field} type='password' />
                           </FormControl>
                           <FormMessage />
                         </FormItem>

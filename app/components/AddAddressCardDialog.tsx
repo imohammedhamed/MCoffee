@@ -103,7 +103,7 @@ export default function AddAddressCardDialog(Prop: AddAddressCardDialogProps) {
                                 <FormItem>
                                     <FormLabel className=' text-DarkBlue font-bold'>Area</FormLabel>
                                     <FormControl>
-                                        <Input placeholder="6Th of October..." {...field} />
+                                        <Input className="text-DarkBlue" placeholder="6Th of October..." {...field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -116,7 +116,7 @@ export default function AddAddressCardDialog(Prop: AddAddressCardDialogProps) {
                                 <FormItem>
                                     <FormLabel className=' text-DarkBlue font-bold'>Street Name</FormLabel>
                                     <FormControl>
-                                        <Input placeholder="First street, Second street..." {...field} />
+                                        <Input className="text-DarkBlue" placeholder="First street, Second street..." {...field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -129,7 +129,7 @@ export default function AddAddressCardDialog(Prop: AddAddressCardDialogProps) {
                                 <FormItem>
                                     <FormLabel className=' text-DarkBlue font-bold'>Building Type</FormLabel>
                                     <FormControl>
-                                        <Input placeholder="Apartment, House, Work..." {...field} />
+                                        <Input className="text-DarkBlue" placeholder="Apartment, House, Work..." {...field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -142,7 +142,7 @@ export default function AddAddressCardDialog(Prop: AddAddressCardDialogProps) {
                                 <FormItem>
                                     <FormLabel className=' text-DarkBlue font-bold'>Building Number</FormLabel>
                                     <FormControl>
-                                        <Input placeholder="85, your building number..." {...field} />
+                                        <Input className="text-DarkBlue" placeholder="85, your building number..." {...field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -155,7 +155,7 @@ export default function AddAddressCardDialog(Prop: AddAddressCardDialogProps) {
                                 <FormItem>
                                     <FormLabel className=' text-DarkBlue font-bold'>Floor Number</FormLabel>
                                     <FormControl>
-                                        <Input placeholder="2, 3, 4, 5 or second floor..." {...field} />
+                                        <Input className="text-DarkBlue" placeholder="2, 3, 4, 5 or second floor..." {...field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -168,7 +168,7 @@ export default function AddAddressCardDialog(Prop: AddAddressCardDialogProps) {
                                 <FormItem>
                                     <FormLabel className=' text-DarkBlue font-bold'>Apartment Number</FormLabel>
                                     <FormControl>
-                                        <Input placeholder="22, your apartment number..." {...field} />
+                                        <Input className="text-DarkBlue" placeholder="22, your apartment number..." {...field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -181,7 +181,7 @@ export default function AddAddressCardDialog(Prop: AddAddressCardDialogProps) {
                                 <FormItem>
                                     <FormLabel className=' text-DarkBlue font-bold'>Mobile Number</FormLabel>
                                     <FormControl>
-                                        <Input placeholder="(20+) delivery is only within Egypt..." {...field} />
+                                        <Input className="text-DarkBlue" placeholder="(20+) delivery is only within Egypt..." {...field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>

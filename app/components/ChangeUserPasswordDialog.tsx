@@ -92,7 +92,7 @@ export default function ChangeUserPasswordDialog({userid,className,password}:Cha
                         <FormItem>
                           <FormLabel className=' text-DarkBlue font-bold'>Enter Your New password </FormLabel>
                           <FormControl>
-                            <Input placeholder='Enter Your password...' {...field} />
+                            <Input className=' text-DarkBlue' placeholder='Enter Your password...' {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -105,7 +105,7 @@ export default function ChangeUserPasswordDialog({userid,className,password}:Cha
                         <FormItem>
                           <FormLabel className=' text-DarkBlue font-bold'>Confirm your New Password</FormLabel>
                           <FormControl>
-                            <Input placeholder='Enter your password again...' {...field} />
+                            <Input className=' text-DarkBlue' placeholder='Enter your password again...' {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -118,7 +118,7 @@ export default function ChangeUserPasswordDialog({userid,className,password}:Cha
                         <FormItem>
                           <FormLabel className=' text-DarkBlue font-bold'>Enter Your Previous password </FormLabel>
                           <FormControl>
-                            <Input {...field} type='password' />
+                            <Input className=' text-DarkBlue' {...field} type='password' />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
