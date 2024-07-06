@@ -70,7 +70,7 @@ export default function ChangeUserPictureDialog({userid,className}:ChangeUserPic
     <DialogTrigger asChild>
     <span className=' text-base font-semibold text-Blue600 cursor-pointer hover:opacity-70'>Edit your Picture</span>
     </DialogTrigger>
-<DialogContent className="max-w-[350px] lg:max-w-[450px] bg-Blue100 rounded-lg">
+    <DialogContent className="max-w-[350px] lg:max-w-[450px] bg-Blue100 rounded-lg">
     <DialogHeader className='pb-7'>
       <DialogTitle className=' text-DarkBlue'>Change Your picture</DialogTitle>
     </DialogHeader>
@@ -92,7 +92,7 @@ export default function ChangeUserPictureDialog({userid,className}:ChangeUserPic
               <Button variant="ghostLightBlue" disabled={loading} type="submit" className=' w-full'>{loading?<span className="loading loading-dots loading-sm"></span> :`Save changes`}</Button>
             </form>
       </Form>
-</DialogContent>
+    </DialogContent>
     </Dialog>
   )
 }
