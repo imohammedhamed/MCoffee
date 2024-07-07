@@ -88,14 +88,12 @@ export default function EditAddressAlertDialog({
         values.floorNumber !== floorNumber ||
         values.apartmentNumber !== apartmentNumber ||
         values.mobileNumber !== mobileNumber;
-
       if (hasChanges) {
         const response = await fetch("/api/update-address", {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(values),
         });
-
         if (response.ok) {
           toast.success("Successfully updated your address");
           router.refresh();

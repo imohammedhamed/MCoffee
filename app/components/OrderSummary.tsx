@@ -39,7 +39,7 @@ export default function OrderSummary({OrderId,item}:OrderSummaryProps) {
                         <>
                         <div className=' flex w-full justify-between items-center'>
                             <p className=' text-DarkBlue text-lg'>{it.title}</p>
-                            <p className=' text-Blue600 font-bold'>{'$'+it.price}</p>
+                            <p className=' text-Blue600 font-bold'>{'EGP'+it.price}</p>
                         </div>
                         </>
                     )
