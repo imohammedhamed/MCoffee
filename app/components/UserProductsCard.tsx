@@ -47,7 +47,7 @@ export default function UserProductsCard({orderId,id,title,picture,price,prefere
                     <h2 className=' text-3xl sm:text-xl text-DarkBlue font-medium text-clip'>{title}</h2>
                     {/* <p className=' text-xs text-lightGrey font-bold'>{`${preferences.size} - ${preferences.coffeeType} - ${preferences.milkType}`}</p> */}
                 </div>
-                <p className='text-lg text-nowrap text-Blue600 font-bold'>{`EGP${price}`}</p>
+                <p className='text-lg text-nowrap text-Blue600 font-bold'>{`EGP ${price}`}</p>
             </div>
             <div className=' w-full flex justify-between items-center mt-10 sm:mt-5'>
                 <Button 
