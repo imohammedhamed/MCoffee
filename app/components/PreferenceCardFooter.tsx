@@ -42,7 +42,7 @@ export default function PreferenceCardFooter({userId,ItemPrice,itemId,orderId}:P
   }
   return (
     <div className=' flex justify-between items-center p-5 mt-5 border border-solid bosrder-lightBlue rounded-lg bg-white'>
-    <p className=' text-xl text-Blue600 font-bold'>{'EGP'+ ItemPrice}</p>
+    <p className=' text-xl text-Blue600 font-bold'>{'EGP '+ ItemPrice}</p>
     <Button onClick={handleAdding} disabled={loading} >{loading?<span className="loading loading-dots loading-sm"></span> : `Add To Cart`}</Button>
     </div>
   )

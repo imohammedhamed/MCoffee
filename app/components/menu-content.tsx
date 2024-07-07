@@ -27,7 +27,7 @@ export default function MenuContent({title,picture,price,categoryId,id}:MenuCont
             </div>
             <h3 className=' text-xl pt-5 pb-5 text-center'>{title}</h3>
             <div className=' w-full flex justify-between items-center'>
-            <span className=' text-xl text-primary font-bold'>{'EGP'+price}</span>
+            <span className=' text-xl text-primary font-bold'>{'EGP '+price}</span>
             <Button onClick={handleClick}><FaCartPlus className='text-2xl'/></Button>
             </div>
         </div>

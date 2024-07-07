@@ -39,7 +39,7 @@ export default function OrderSummary({OrderId,item}:OrderSummaryProps) {
                         <>
                         <div className=' flex w-full justify-between items-center'>
                             <p className=' text-DarkBlue text-lg'>{it.title}</p>
-                            <p className=' text-Blue600 font-bold'>{'EGP'+it.price}</p>
+                            <p className=' text-Blue600 font-bold'>{'EGP '+it.price}</p>
                         </div>
                         </>
                     )
@@ -49,20 +49,20 @@ export default function OrderSummary({OrderId,item}:OrderSummaryProps) {
          <div className=' *:text-DarkBlue pb-2'>
             <div className=' flex w-full justify-between items-center '>
                 <p className=' text-lg'>Total</p>
-                <p className=' font-bold'>{'$'+Math.floor(TotalAmount)}</p>
+                <p className=' font-bold'>{'EGP '+Math.floor(TotalAmount)}</p>
             </div>
             <div className=' flex w-full justify-between items-center '>
                 <p className=' text-lg'>Delivery fee</p>
-                <p className=' font-bold'>{'$'+FEES.DELIVERY_FEE}</p>
+                <p className=' font-bold'>{'EGP '+FEES.DELIVERY_FEE}</p>
             </div>
             <div className=' flex w-full justify-between items-center'>
                 <p className='text-lg'>Service fee</p>
-                <p className='font-bold'>{'$'+FEES.SERVICE_FEE}</p>
+                <p className='font-bold'>{'EGP '+FEES.SERVICE_FEE}</p>
             </div>
          </div>
             <div className=' flex w-full justify-between items-center *:text-DarkBlue border-t border-DarkBlue py-5'>
                 <p className='text-xl font-semibold'> Total Amount </p>
-                <p className=' text-lg font-bold'>{'$'+ Math.floor(FEES.SERVICE_FEE + FEES.DELIVERY_FEE+TotalAmount)}</p>
+                <p className=' text-lg font-bold'>{'EGP '+ Math.floor(FEES.SERVICE_FEE + FEES.DELIVERY_FEE+TotalAmount)}</p>
             </div>
             <AlertDialog>
                     <AlertDialogTrigger asChild>
