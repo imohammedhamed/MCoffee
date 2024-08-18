@@ -23,7 +23,7 @@ export default function MenuContent({title,picture,price,categoryId,id}:MenuCont
     <div className=' p-5 flex justify-center items-center'>
       <div className=' bg-white text-DarkBlue border border-solid border-lightBlue p-5 rounded-lg flex justify-between items-center flex-col w-full h-full min-h-[350px]'>
         <div className = 'p-2'>
-            <Image src={picture} className="rounded-lg" alt="product img" title="Project img"  width={250} height={250}/>
+            <Image src={picture} className="rounded-lg" alt="product img" title="Project img"  width={250} height={250} style={{ objectFit: 'cover' }}/>
             </div>
             <h3 className=' text-xl pt-5 pb-5 text-center'>{title}</h3>
             <div className=' w-full flex justify-between items-center'>
@@ -35,3 +35,4 @@ export default function MenuContent({title,picture,price,categoryId,id}:MenuCont
     </>
   )
 }
+  

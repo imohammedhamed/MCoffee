@@ -11,7 +11,7 @@ export default function RootLayout({
   return (
         <main className=" flex flex-col min-h-screen">
         <Navbar />
-        <BreadcrumbDemo/>
+        {/* <BreadcrumbDemo/> */}
         <Toaster position="top-center"/>
         <div className=" flex-grow flex-1">
         {children}
