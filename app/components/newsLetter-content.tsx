@@ -23,14 +23,13 @@ export default function NewsLetterContent(prop :newsLetterContentprop) {
             </div>
             <div className="bg-Blue300 px-4 py-8">
                 <div className="w-full h-full bg-summerBg01 bg-contain relative">
-                <Image
-                    src={prop.imgSrc}
-                    // layout="fill"
-                    fill
-                    objectFit="contain"
-                    alt="newsLetterContent"
-                    className="w-full h-full"
-                />
+            <Image
+                src={prop.imgSrc}
+                fill
+                alt="newsLetterContent"
+                className="w-full h-full"
+                style={{ objectFit: 'contain' }} // Or 'cover' depending on your design needs
+            />
                 </div>
             </div>
             </div>
