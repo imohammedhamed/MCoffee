@@ -28,6 +28,7 @@ password : 123123
 
 - **Framework**: Next.js TypeScript
 - **Styling**: Tailwind CSS, shadcn UI Toast Notifications
+- **TypeScript-first schema validation**: Zod
 - **Database**: Prisma with MongoDB
 - **Authentication**: NextAuth JWT
 
