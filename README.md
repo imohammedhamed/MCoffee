@@ -13,8 +13,8 @@ email : nu@gmail.com
 password : 123123  
 
 ### Show Case
-![Home Page](imgs_showCase/For_GitHub_show_case.png)
-![Home Page](imgs_showCase/For_GitHub_show_case_two.png)
+![Home Page](showCase_imgs/For_GitHub_show_case.png)
+![Home Page](showCase_imgs/For_GitHub_show_case_two.png)
 
 
 ## Features
