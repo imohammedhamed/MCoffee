@@ -4,8 +4,8 @@ Welcome to MCoffee,
 
 MCoffee is a user-friendly web application designed for coffee lovers. Users can browse through the menu and search for their favorite coffee beverages from the comfort of their home or on the go.
 
-## Visit
-You can visit the live page of MCoffee: [here](https://m-coffee-chi.vercel.app/).
+## Design File
+Figma: [here](https://www.figma.com/design/SX8vNwLfzIRDz7UPQGmSTf/Coffee-Shop?node-id=0-1&t=Uu4sb84ScmjlbLc7-1).
 
 and you can use this email and password  
 
