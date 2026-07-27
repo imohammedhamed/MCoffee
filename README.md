@@ -7,11 +7,6 @@ MCoffee is a user-friendly web application designed for coffee lovers. Users can
 ## Design File
 Figma: [here](https://www.figma.com/design/SX8vNwLfzIRDz7UPQGmSTf/Coffee-Shop?node-id=0-1&t=Uu4sb84ScmjlbLc7-1).
 
-and you can use this email and password  
-
-email : nu@gmail.com  
-password : 123123  
-
 ### Show Case
 ![Home Page](showCase_imgs/For_GitHub_show_case.png)
 ![Home Page](showCase_imgs/For_GitHub_show_case_two.png)
